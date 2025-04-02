@@ -18,3 +18,53 @@ Paweł Adamczyk, Mikołaj Dudkiewicz
 - **Generator skanerów/parserów:** ANTLR  
 
 ## Opis tokenów 
+```java
+// Tokeny
+  PLUS: '+';
+  MINUS: '-';
+  MUL: '*';
+  DIV: '/';
+  POW: '**';
+  EQ: '=';
+  LPAREN: '(';
+  RPAREN: ')';
+  LSQUARE: '[';
+  RSQUARE:']';
+  EE: '==';
+  NE: '!=';
+  LT: '<';
+  GT: '>';
+  LTE: '<=';
+  GTE: '>=';
+  COMMA: ',';
+  ARROW: '->';
+  NEWLINE: '\n';
+  EOF: ;
+ 
+// Słowa kluczowe
+  VAR: 'ZMIYNNO';
+  AND: 'I';
+  OR: 'ALBO';
+  NOT: 'NIY';
+  IF: 'JAK';
+  ELIF: 'ALIJAK';
+  ELSE: 'INKSZI';
+  FOR: 'DLA';
+  TO: 'DO';
+  STEP: 'CO';
+  WHILE: 'PÓKI';
+  FUN: 'FUNKCJO';
+  THEN: 'TOŻ';
+  END: 'KONIEC';
+  RETURN: 'ODDOJ';
+  CONTINUE: 'LEĆ';
+  BREAK: 'STOP';
+
+// Typy
+INT: ;
+FLOAT: ;
+STRING: ;	
+IDENTIFIER: ;
+KEYWORD: ;
+
+```
