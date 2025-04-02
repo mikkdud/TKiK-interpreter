@@ -1,2 +1,20 @@
-# TKiK-interpreter
-Interpreter wzorowany na BASIC-u ze składnią w języku śląskim. Projekt edukacyjny pokazujący, jak zbudować parser i interpreter w Pythonie z nutą humoru i regionalnego kolorytu. Łączy naukę kompilatorów z zabawą językiem naturalnym.
+# "Szprajch" – język umożliwiający komunikację Ślązaków z komputerem
+
+## Autorzy  
+Paweł Adamczyk, Mikołaj Dudkiewicz  
+
+<details>
+  <summary>Dane kontaktowe</summary>
+  Email: adamczyk@student.agh.edu.pl 
+</details>
+
+## Założenia projektu  
+- **Cel:** Stworzenie interpretera własnego języka programowania (inspirowanego językiem śląskim), którego składnia opiera się na BASIC-u.  
+- **Rodzaj translatora:** Interpreter (bez kompilacji do kodu pośredniego).  
+- **Wynik działania programu:** Bezpośrednie wykonanie kodu źródłowego (interaktywnie lub wczytując plik).  
+
+## Technologie  
+- **Język implementacji:** Python   
+- **Generator skanerów/parserów:** ANTLR  
+
+## Opis tokenów 
