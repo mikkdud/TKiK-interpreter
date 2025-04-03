@@ -5,7 +5,9 @@ Paweł Adamczyk, Mikołaj Dudkiewicz
 
 <details>
   <summary>Dane kontaktowe</summary>
-  Email: adamczyk@student.agh.edu.pl 
+  Email: 
+        <br>adamczyk@student.agh.edu.pl
+        <br>mdudkiewicz@student.agh.edu.pl
 </details>
 
 ## Założenia projektu  
@@ -37,9 +39,12 @@ Paweł Adamczyk, Mikołaj Dudkiewicz
   LTE: '<=';
   GTE: '>=';
   COMMA: ',';
+  DOT: '.';
+  AMPERSAND: '&';
+  COLON: ':';
+  SEMICOLON: ';';
   ARROW: '->';
   NEWLINE: '\n';
-  EOF: ;
  
 // Słowa kluczowe
   VAR: 'ZMIYNNO';
@@ -61,10 +66,11 @@ Paweł Adamczyk, Mikołaj Dudkiewicz
   BREAK: 'STOP';
 
 // Typy
-INT: ;
-FLOAT: ;
-STRING: ;	
-IDENTIFIER: ;
-KEYWORD: ;
+  INT: 'COŁKOWITŌ';
+  FLOAT: 'RUCHŌMY';
+  STRING: 'ZNAKI';	
+  IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
 
+// Komentarze
+  COMMENT: '\'' ~[\r\n]* -> skip;
 ```
