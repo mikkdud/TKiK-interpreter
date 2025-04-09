@@ -1,4 +1,4 @@
-# Generated from Szprajch.g4 by ANTLR 4.13.2
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -140,15 +140,14 @@ class SzprajchParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'*'", "'/'", "'+'", "'-'", "'^'", "'MOD'", 
-                     "'<>'", "'>='", "'<='", "'>'", "'<'", "'='", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "','", "'('", "')'", "'['", 
-                     "']'", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "'<>'", "'>='", "'<='", "'>'", "'<'", "'='", "'I'", 
+                     "'ALBO'", "'NIY'", "','", "'('", "')'", "'['", "']'", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'$'" ]
+                     "<INVALID>", "'ZMIYNNO'", "'GODKA'", "'JAK'", "'POTYM'", 
+                     "'INKSZY'", "'KONIEC'", "'FUNKCYJO'", "'NAZOT'", "'DLA'", 
+                     "'P\\u00D3KI'", "<INVALID>", "'A\\u017B'", "'CO'", 
+                     "<INVALID>", "'DO'", "'CI\\u015A'", "'STOPNIJ'", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "'$'" ]
 
     symbolicNames = [ "<INVALID>", "MUL", "DIV", "ADD", "SUB", "EXP", "MOD", 
                       "NEQ", "GTE", "LTE", "GT", "LT", "EQ", "AND", "OR", 
@@ -156,7 +155,7 @@ class SzprajchParser ( Parser ):
                       "LEN", "VAL", "ISNAN", "PRINT", "INPUT", "LET", "REM", 
                       "IF", "THEN", "ELSE", "END", "FUNCTION", "RETURN", 
                       "FOR", "WHILE", "REPEAT", "UNTIL", "STEP", "NEXT", 
-                      "TO", "CONTINUE", "EXIT", "COMMENT", "ID", "NUMBER", 
+                      "TO", "CONTINUE", "BREAK", "COMMENT", "ID", "NUMBER", 
                       "STRINGLITERAL", "DOLLAR", "NEWLINE", "WS" ]
 
     RULE_program = 0
@@ -173,7 +172,7 @@ class SzprajchParser ( Parser ):
     RULE_whilestmt = 11
     RULE_repeatstmt = 12
     RULE_continuestmt = 13
-    RULE_exitstmt = 14
+    RULE_breakstmt = 14
     RULE_functiondef = 15
     RULE_paramlist = 16
     RULE_returnstmnt = 17
@@ -192,7 +191,7 @@ class SzprajchParser ( Parser ):
     ruleNames =  [ "program", "statement", "block", "assignmentstmt", "varname", 
                    "printstmt", "inputstmt", "ifstmt", "elifstmt", "elsestmt", 
                    "forstmt", "whilestmt", "repeatstmt", "continuestmt", 
-                   "exitstmt", "functiondef", "paramlist", "returnstmnt", 
+                   "breakstmt", "functiondef", "paramlist", "returnstmnt", 
                    "expression", "func", "list", "string", "number", "id", 
                    "functioncall", "arglist", "lenfunc", "valfunc", "isnanfunc" ]
 
@@ -238,7 +237,7 @@ class SzprajchParser ( Parser ):
     NEXT=39
     TO=40
     CONTINUE=41
-    EXIT=42
+    BREAK=42
     COMMENT=43
     ID=44
     NUMBER=45
@@ -249,7 +248,7 @@ class SzprajchParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.13.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -280,6 +279,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitProgram" ):
                 listener.exitProgram(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProgram" ):
+                return visitor.visitProgram(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -350,8 +355,8 @@ class SzprajchParser ( Parser ):
             return self.getTypedRuleContext(SzprajchParser.ContinuestmtContext,0)
 
 
-        def exitstmt(self):
-            return self.getTypedRuleContext(SzprajchParser.ExitstmtContext,0)
+        def breakstmt(self):
+            return self.getTypedRuleContext(SzprajchParser.BreakstmtContext,0)
 
 
         def COMMENT(self):
@@ -367,6 +372,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStatement" ):
                 listener.exitStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStatement" ):
+                return visitor.visitStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -432,7 +443,7 @@ class SzprajchParser ( Parser ):
             elif token in [42]:
                 self.enterOuterAlt(localctx, 11)
                 self.state = 71
-                self.exitstmt()
+                self.breakstmt()
                 pass
             elif token in [43]:
                 self.enterOuterAlt(localctx, 12)
@@ -487,6 +498,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBlock" ):
                 listener.exitBlock(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBlock" ):
+                return visitor.visitBlock(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -575,6 +592,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitAssignmentstmt" ):
                 listener.exitAssignmentstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssignmentstmt" ):
+                return visitor.visitAssignmentstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -629,6 +652,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitVarname" ):
                 listener.exitVarname(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarname" ):
+                return visitor.visitVarname(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -673,6 +702,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPrintstmt" ):
                 listener.exitPrintstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrintstmt" ):
+                return visitor.visitPrintstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -724,6 +759,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInputstmt" ):
                 listener.exitInputstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInputstmt" ):
+                return visitor.visitInputstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -800,6 +841,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIfstmt" ):
                 listener.exitIfstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfstmt" ):
+                return visitor.visitIfstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -912,6 +959,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitElifstmt" ):
                 listener.exitElifstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitElifstmt" ):
+                return visitor.visitElifstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -993,6 +1046,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitElsestmt" ):
                 listener.exitElsestmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitElsestmt" ):
+                return visitor.visitElsestmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1082,6 +1141,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitForstmt" ):
                 listener.exitForstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitForstmt" ):
+                return visitor.visitForstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1178,6 +1243,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitWhilestmt" ):
                 listener.exitWhilestmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhilestmt" ):
+                return visitor.visitWhilestmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1255,6 +1326,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitRepeatstmt" ):
                 listener.exitRepeatstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRepeatstmt" ):
+                return visitor.visitRepeatstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1327,6 +1404,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitContinuestmt" ):
                 listener.exitContinuestmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitContinuestmt" ):
+                return visitor.visitContinuestmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1347,38 +1430,44 @@ class SzprajchParser ( Parser ):
         return localctx
 
 
-    class ExitstmtContext(ParserRuleContext):
+    class BreakstmtContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def EXIT(self):
-            return self.getToken(SzprajchParser.EXIT, 0)
+        def BREAK(self):
+            return self.getToken(SzprajchParser.BREAK, 0)
 
         def getRuleIndex(self):
-            return SzprajchParser.RULE_exitstmt
+            return SzprajchParser.RULE_breakstmt
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExitstmt" ):
-                listener.enterExitstmt(self)
+            if hasattr( listener, "enterBreakstmt" ):
+                listener.enterBreakstmt(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExitstmt" ):
-                listener.exitExitstmt(self)
+            if hasattr( listener, "exitBreakstmt" ):
+                listener.exitBreakstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBreakstmt" ):
+                return visitor.visitBreakstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def exitstmt(self):
+    def breakstmt(self):
 
-        localctx = SzprajchParser.ExitstmtContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_exitstmt)
+        localctx = SzprajchParser.BreakstmtContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_breakstmt)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 202
-            self.match(SzprajchParser.EXIT)
+            self.match(SzprajchParser.BREAK)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1434,6 +1523,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctiondef" ):
                 listener.exitFunctiondef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctiondef" ):
+                return visitor.visitFunctiondef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1516,6 +1611,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitParamlist" ):
                 listener.exitParamlist(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParamlist" ):
+                return visitor.visitParamlist(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1573,6 +1674,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReturnstmnt" ):
                 listener.exitReturnstmnt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturnstmnt" ):
+                return visitor.visitReturnstmnt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1635,6 +1742,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitAndExpr" ):
                 listener.exitAndExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAndExpr" ):
+                return visitor.visitAndExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class StringExprContext(ExpressionContext):
 
@@ -1654,6 +1767,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitStringExpr" ):
                 listener.exitStringExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringExpr" ):
+                return visitor.visitStringExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class IdExprContext(ExpressionContext):
 
@@ -1672,6 +1791,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIdExpr" ):
                 listener.exitIdExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIdExpr" ):
+                return visitor.visitIdExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class RelExprContext(ExpressionContext):
@@ -1708,6 +1833,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitRelExpr" ):
                 listener.exitRelExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelExpr" ):
+                return visitor.visitRelExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class ExpExprContext(ExpressionContext):
 
@@ -1732,6 +1863,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitExpExpr" ):
                 listener.exitExpExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpExpr" ):
+                return visitor.visitExpExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class FuncExprContext(ExpressionContext):
 
@@ -1750,6 +1887,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFuncExpr" ):
                 listener.exitFuncExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFuncExpr" ):
+                return visitor.visitFuncExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class OrExprContext(ExpressionContext):
@@ -1774,6 +1917,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitOrExpr" ):
                 listener.exitOrExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOrExpr" ):
+                return visitor.visitOrExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class IndexExprContext(ExpressionContext):
@@ -1800,6 +1949,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIndexExpr" ):
                 listener.exitIndexExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIndexExpr" ):
+                return visitor.visitIndexExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class MulDivExprContext(ExpressionContext):
@@ -1830,6 +1985,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitMulDivExpr" ):
                 listener.exitMulDivExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMulDivExpr" ):
+                return visitor.visitMulDivExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class NumberExprContext(ExpressionContext):
 
@@ -1848,6 +2009,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNumberExpr" ):
                 listener.exitNumberExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumberExpr" ):
+                return visitor.visitNumberExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class NotExprContext(ExpressionContext):
@@ -1870,6 +2037,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitNotExpr" ):
                 listener.exitNotExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNotExpr" ):
+                return visitor.visitNotExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
     class ListExprContext(ExpressionContext):
 
@@ -1888,6 +2061,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitListExpr" ):
                 listener.exitListExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitListExpr" ):
+                return visitor.visitListExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class ParenExprContext(ExpressionContext):
@@ -1911,6 +2090,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitParenExpr" ):
                 listener.exitParenExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParenExpr" ):
+                return visitor.visitParenExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
     class AddSubExprContext(ExpressionContext):
@@ -1938,6 +2123,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAddSubExpr" ):
                 listener.exitAddSubExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAddSubExpr" ):
+                return visitor.visitAddSubExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2181,6 +2372,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitFunc" ):
                 listener.exitFunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc" ):
+                return visitor.visitFunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2256,6 +2453,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitList" ):
                 listener.exitList(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitList" ):
+                return visitor.visitList(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2320,6 +2523,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitString" ):
                 listener.exitString(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitString" ):
+                return visitor.visitString(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2360,6 +2569,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNumber" ):
                 listener.exitNumber(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumber" ):
+                return visitor.visitNumber(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2405,6 +2620,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitId" ):
                 listener.exitId(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId" ):
+                return visitor.visitId(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2470,6 +2691,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitFunctioncall" ):
                 listener.exitFunctioncall(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctioncall" ):
+                return visitor.visitFunctioncall(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2533,6 +2760,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArglist" ):
                 listener.exitArglist(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArglist" ):
+                return visitor.visitArglist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2598,6 +2831,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitLenfunc" ):
                 listener.exitLenfunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLenfunc" ):
+                return visitor.visitLenfunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2655,6 +2894,12 @@ class SzprajchParser ( Parser ):
             if hasattr( listener, "exitValfunc" ):
                 listener.exitValfunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValfunc" ):
+                return visitor.visitValfunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2711,6 +2956,12 @@ class SzprajchParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIsnanfunc" ):
                 listener.exitIsnanfunc(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIsnanfunc" ):
+                return visitor.visitIsnanfunc(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 

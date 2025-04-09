@@ -17,7 +17,7 @@ statement
     | returnstmnt
     | repeatstmt // ?
     | continuestmt // ?
-    | exitstmt // ?
+    | breakstmt
     | COMMENT;
 
 block: (statement (NEWLINE+ | EOF))*;
@@ -49,7 +49,7 @@ repeatstmt: REPEAT NEWLINE+ block NEWLINE* UNTIL expression;
 
 continuestmt: CONTINUE;
 
-exitstmt: EXIT;
+breakstmt: BREAK;
 
 functiondef:
     FUNCTION ID LPAREN paramlist? RPAREN NEWLINE+ block END;

@@ -4,7 +4,7 @@ import SzprajchTokens;
 
 program: statement+;
 
-statement: expression NEWLINE| NEWLINE;
+statement: expression NEWLINE | NEWLINE;
 
 expression: 
     string                                      # StringExpr
@@ -46,7 +46,3 @@ lenfunc: LEN LPAREN expression RPAREN;
 valfunc: VAL LPAREN expression RPAREN;
 
 isnanfunc: ISNAN LPAREN expression RPAREN;
-
-//exprlist
-//    : expression (COMMA expression)*
-//    ;

@@ -21,9 +21,9 @@ LT  : '<' ;
 EQ  : '=' ;
 
 // relational
-AND : 'AND' | 'and' ;
-OR  : 'OR' | 'or' ;
-NOT : 'NOT' | 'not' ;
+AND : 'I' ;
+OR  : 'ALBO' ;
+NOT : 'NIY' ;
 
 // other
 COMMA  : ',' ;
@@ -38,37 +38,33 @@ VAL : 'VAL' | 'val' ;
 ISNAN   : 'ISNAN' | 'isnan' ;
 
 // keywords
-PRINT   : 'PRINT' | 'print' ;
-INPUT   : 'INPUT' | 'input' ;
-LET     : 'LET' | 'let' ;
-REM     : 'REM' | 'rem' ;
-IF      : 'IF' | 'if' ;
-THEN    : 'THEN' | 'then' ;
-ELSE    : 'ELSE' | 'else' ;
-END     : 'END' | 'end';
-FUNCTION : 'FUNCTION' | 'function';
-RETURN   : 'RETURN' | 'return';
-FOR     : 'FOR' | 'for' ;
-WHILE   : 'WHILE' | 'while' ;
-REPEAT  : 'REPEAT' | 'repeat' ;
-UNTIL   : 'UNTIL' | 'until' ;
-STEP    : 'STEP' | 'step' ;
-NEXT    : 'NEXT' | 'next' ;
-TO      : 'TO' | 'to' ;
-CONTINUE    : 'CONTINUE' | 'continue' ;
-EXIT    : 'EXIT' | 'exit' ;
+PRINT     : 'GODEJ' | 'godej' ;
+INPUT     : 'WKLUDZ' | 'wkludz' ;
+LET       : 'ZMIYNNO' ;
+REM       : 'GODKA' ;
+IF        : 'JAK' ;
+THEN      : 'POTYM' ;
+ELSE      : 'INKSZY' ;
+END       : 'KONIEC';
+FUNCTION  : 'FUNKCYJO';
+RETURN    : 'NAZOT';
+FOR       : 'DLA' ;
+WHILE     : 'PÓKI' ;
+REPEAT    : 'CIOMPLOJ' | 'cimploj' ;
+UNTIL     : 'AŻ' ;
+STEP      : 'CO' ;
+NEXT      : 'NEXT' | 'next' ;
+TO        : 'DO' ;
+CONTINUE  : 'CIŚ' ;
+BREAK     : 'STOPNIJ' ;
 
 // comments
-COMMENT : REM ~[\r\n]* ;
+COMMENT : REM ~[\r\n]* -> skip ;
 
 // literals
-ID              : [a-zA-Z]+ ;  // match identifiers
+ID              : [a-zA-Z_][a-zA-Z0-9_]* ;  // match identifiers
 NUMBER          : [0-9]+ ('.' [0-9]+)?;   // match integers
 STRINGLITERAL   : '"' ~ ["\r\n]* '"' ;
 DOLLAR          : '$' ;
 NEWLINE         :'\r'? '\n' ;  // return newlines to parser (end-statement signal)
 WS              : [ \t]+ -> skip ; // toss out whitespace
-
-//NUMBER
-//    : ('0' .. '9') + (('e' | 'E') NUMBER)*
-//    ;
