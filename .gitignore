@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# antlr
+Szprajch/.antlr/
+
 # Distribution / packaging
 .Python
 build/
