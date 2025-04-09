@@ -53,24 +53,26 @@ Paweł Adamczyk, Mikołaj Dudkiewicz
   NOT: 'NIY';
   IF: 'JAK';
   ELIF: 'ALIJAK';
-  ELSE: 'INKSZI';
+  ELSE: 'INKSZY';
   FOR: 'DLA';
   TO: 'DO';
   STEP: 'CO';
   WHILE: 'PÓKI';
-  FUN: 'FUNKCJO';
-  THEN: 'TOŻ';
+  FUN: 'FUNKCYJO';
+  THEN: 'POTYM';
   END: 'KONIEC';
-  RETURN: 'ODDOJ';
-  CONTINUE: 'LEĆ';
-  BREAK: 'STOP';
+  RETURN: 'NAZOT';
+  CONTINUE: 'CIŚ';
+  BREAK: 'STOPNIJ';
 
 // Typy
-  INT: 'COŁKOWITŌ';
-  FLOAT: 'RUCHŌMY';
+  INT: 'COŁKOWITO';
+  FLOAT: 'RUCHOMY';
   STRING: 'ZNAKI';	
   IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
 
 // Komentarze
   COMMENT: '\'' ~[\r\n]* -> skip;
 ```
+
+Pełna gramatyka znajduje się w pliku `Szprajch/grammar.g4`
