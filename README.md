@@ -148,7 +148,7 @@ ZMIYNNO x = numery[1]
 
 ---
 
-## 🔧 Instalacja ANTLR (dla języka Szprajch)
+## 🔧 Instalacja [ANTLR](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (dla języka Szprajch)
 
 Instrukcja konfiguracji ANTLR-a w systemach Linux i Windows.
 
@@ -237,8 +237,6 @@ antlr4 Szprajch.g4 -Dlanguage=Python3 -visitor -o gen
 ```
 
 Pliki zostaną zapisane w folderze `gen/`.
-
-Gotowe! Możesz działać z własnym językiem programowania 🚀
 
 ---
 
