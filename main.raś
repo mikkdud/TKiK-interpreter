@@ -1,0 +1,8 @@
+FUNCTION square(x)
+    RETURN x * x
+END
+
+LET result = square(4)
+
+LET nums = [1, 2, 3]
+LET x = nums[1]
