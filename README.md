@@ -4,7 +4,7 @@
 Paweł Adamczyk, Mikołaj Dudkiewicz  
 
 <details>
-  <summary>Dane kontaktowe</summary>
+  <summary>Dane kontaktowe — kliknij, aby rozwinąć</summary>
   Email: 
         <br>adamczyk@student.agh.edu.pl
         <br>mdudkiewicz@student.agh.edu.pl
@@ -86,7 +86,7 @@ CONTINUE  : 'CIŚ' ;
 BREAK     : 'STOPNIJ' ;
 
 // Komentarze
-COMMENT : GODKA ~[\r\n]* -> skip ;
+COMMENT : REM ~[\r\n]* -> skip ;
 
 // Literały
 ID              : [a-zA-Z_][a-zA-Z0-9_]* ;
@@ -98,33 +98,75 @@ WS              : [ \t]+ -> skip ;
 
 
 Pełna gramatyka znajduje się w plikach `Szprajch/*.g4`
+```
+---
 
+## Gramatyka
+Znajduje się w plikach **Szprajch/Szprajch.g4** oraz **Szprajch/SzprajchExpr.g4**
 
-
-
-
-# 🔧 Instalacja ANTLR (dla języka Szprajch)
-
-Instrukcja konfiguracji ANTLR-a w systemach Linux i Windows.
+```text
+📁 Struktura projektu
+.
+├── .gitignore
+├── ast_output
+├── ast_output.png                  # drzewo parsowania
+├── main.py                         # główny plik 
+├── main.sz                         # przykładowy kod w tworzonym języku
+├── README.md
+├── requirements.txt
+├── Szprajch                        # folder ze źródłami gramatyki
+│   ├── Szprajch.g4
+│   ├── SzprajchExpr.g4
+│   └── SzprajchTokens.g4
+└── gen                             # folder z wygenerowanymi plikami (ANTLR)
+    └── Szprajch
+        ├── Szprajch.interp
+        ├── Szprajch.tokens
+        ├── SzprajchLexer.interp
+        ├── SzprajchLexer.py
+        ├── SzprajchLexer.tokens
+        ├── SzprajchListener.py
+        ├── SzprajchParser.py
+        └── SzprajchVisitor.py
+```
 
 ---
 
-## 📦 Wymagania wstępne
+## Przykładowe drzewo parsowania
+```
+FUNKCYJO kwadrat(x)
+    NAZOT x * x
+KONIEC
+
+ZMIYNNO wynik = kwadrat(4)
+
+ZMIYNNO numery = [1, 2, 3]
+ZMIYNNO x = numery[1]
+```
+
+![Drzewko](ast_output.png)
+
+---
+
+## 🔧 Instalacja ANTLR (dla języka Szprajch)
+
+Instrukcja konfiguracji ANTLR-a w systemach Linux i Windows.
+
+### 📦 Wymagania wstępne
 
 - Java JDK (`java -version`)
 - Python 3 (`python3 --version`)
 - pip (`pip3 --version` lub `python -m pip`)
 
 ---
+<details>
+  <summary><strong>🐧 Linux / WSL</strong></summary>
 
-## 🐧 Linux / WSL
-
-### 1. Pobierz ANTLR
+#### 1. Pobierz ANTLR
 
 ```bash
 cd /usr/local/lib
 sudo curl -O https://www.antlr.org/download/antlr-4.13.1-complete.jar
-```
 
 ### 2. Dodaj alias i CLASSPATH
 
@@ -134,7 +176,7 @@ echo "alias antlr4='java -jar /usr/local/lib/antlr-4.13.1-complete.jar'" >> ~/.b
 source ~/.bashrc
 ```
 
-### 3. Stwórz środowisko wirtualne i zainstaluj bibliotekę ANTLR
+#### 3. Stwórz środowisko wirtualne i zainstaluj bibliotekę ANTLR
 
 ```bash
 cd /ścieżka/do/projektu
@@ -142,12 +184,14 @@ python3 -m venv venv
 source venv/bin/activate
 pip install antlr4-python3-runtime
 ```
+</details>
 
 ---
 
-## 🪟 Windows
+<details>
+  <summary><strong>🪟 Windows</strong></summary>
 
-### 1. Pobierz ANTLR
+#### 1. Pobierz ANTLR
 
 Pobierz plik `.jar` z:
 
@@ -155,7 +199,7 @@ Pobierz plik `.jar` z:
 
 Zapisz np. do `C:\antlr\antlr-4.13.1-complete.jar`
 
-### 2. Ustaw zmienne środowiskowe
+#### 2. Ustaw zmienne środowiskowe
 
 W `cmd` lub `PowerShell`:
 
@@ -172,7 +216,7 @@ java -jar C:\antlr\antlr-4.13.1-complete.jar %*
 
 Dodaj ten folder do `PATH`.
 
-### 3. Utwórz środowisko i zainstaluj bibliotekę
+#### 3. Utwórz środowisko i zainstaluj bibliotekę
 
 ```powershell
 cd C:\ścieżka\do\projektu
@@ -180,10 +224,11 @@ python -m venv venv
 .\venv\Scripts\activate
 pip install antlr4-python3-runtime
 ```
+</details>
 
 ---
 
-## ✅ Użycie ANTLR
+### ✅ Użycie ANTLR
 
 Po instalacji możesz wygenerować parser:
 
@@ -193,17 +238,15 @@ antlr4 Szprajch.g4 -Dlanguage=Python3 -visitor -o gen
 
 Pliki zostaną zapisane w folderze `gen/`.
 
----
-
 Gotowe! Możesz działać z własnym językiem programowania 🚀
 
 ---
 
-## 💡 Dodatkowa wskazówka: VS Code i interpreter Pythona
+### 💡 Dodatkowa wskazówka: VS Code i interpreter Pythona
 
 Jeśli używasz VS Code i środowisko `venv` zostało utworzone, ale nie działa np. import `antlr4`, upewnij się, że edytor korzysta z odpowiedniego interpretera.
 
-### ✅ Jak to zrobić:
+#### ✅ Jak to zrobić:
 1. Wciśnij `Ctrl + Shift + P`
 2. Wpisz: `Python: Select Interpreter`
 3. Wybierz **(Recommended)** lub interpreter znajdujący się w `./venv/bin/python`
