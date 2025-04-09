@@ -1,6 +1,9 @@
 from antlr4 import *
-from Szprajch.SzprajchLexer import SzprajchLexer
-from Szprajch.SzprajchParser import SzprajchParser
+from gen.Szprajch.SzprajchLexer import SzprajchLexer
+from gen.Szprajch.SzprajchParser import SzprajchParser
+from gen.Szprajch.SzprajchVisitor import SzprajchVisitor
+
+
 from graphviz import Digraph
 
 def print_tree(node, parser, graph, parent_id=None, node_id=0):
@@ -25,7 +28,7 @@ def visualize_tree(tree, parser):
     dot.render('ast_output', view=True, format='png')  # ast_output.png
 
 
-input_text = FileStream("main.raś")
+input_text = FileStream("main.sz")
 lexer = SzprajchLexer(input_text)
 stream = CommonTokenStream(lexer)
 parser = SzprajchParser(stream)

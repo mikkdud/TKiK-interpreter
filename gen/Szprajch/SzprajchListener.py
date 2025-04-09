@@ -1,4 +1,4 @@
-# Generated from Szprajch.g4 by ANTLR 4.13.2
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .SzprajchParser import SzprajchParser
@@ -134,12 +134,12 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by SzprajchParser#exitstmt.
-    def enterExitstmt(self, ctx:SzprajchParser.ExitstmtContext):
+    # Enter a parse tree produced by SzprajchParser#breakstmt.
+    def enterBreakstmt(self, ctx:SzprajchParser.BreakstmtContext):
         pass
 
-    # Exit a parse tree produced by SzprajchParser#exitstmt.
-    def exitExitstmt(self, ctx:SzprajchParser.ExitstmtContext):
+    # Exit a parse tree produced by SzprajchParser#breakstmt.
+    def exitBreakstmt(self, ctx:SzprajchParser.BreakstmtContext):
         pass
 
 
