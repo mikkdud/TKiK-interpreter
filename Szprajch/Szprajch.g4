@@ -14,11 +14,9 @@ statement
     | forstmt
     | whilestmt
     | functiondef
-    | returnstmnt
-    | repeatstmt // ?
-    | continuestmt // ?
-    | breakstmt
+    | repeatstmt 
     | COMMENT;
+
 
 block: (statement (NEWLINE+ | EOF))*;
 
@@ -40,20 +38,50 @@ elsestmt:
     ELSE NEWLINE+ block;
 
 forstmt: 
-    FOR varname EQ expression TO expression (STEP expression)? NEWLINE+ block NEXT;
+    FOR varname EQ expression TO expression (STEP expression)? NEWLINE+ loop_block NEXT;
 
 whilestmt: 
-    WHILE expression NEWLINE+ block END;
+    WHILE expression NEWLINE+ loop_block END;
 
-repeatstmt: REPEAT NEWLINE+ block NEWLINE* UNTIL expression;
+repeatstmt: REPEAT NEWLINE+ loop_block NEWLINE* UNTIL expression;
 
 continuestmt: CONTINUE;
 
 breakstmt: BREAK;
 
 functiondef:
-    FUNCTION ID LPAREN paramlist? RPAREN NEWLINE+ block END;
+    FUNCTION ID LPAREN paramlist? RPAREN NEWLINE+ function_block END;
 
 paramlist: ID (COMMA ID)*;
 
 returnstmnt: RETURN expression;
+
+
+loop_statement
+    : assignmentstmt
+    | printstmt
+    | inputstmt
+    | ifstmt
+    | forstmt
+    | whilestmt
+    | repeatstmt
+    | continuestmt
+    | breakstmt
+    | COMMENT;
+
+loop_block: (loop_statement NEWLINE+)*;
+
+function_statement
+    : assignmentstmt
+    | printstmt
+    | inputstmt
+    | ifstmt
+    | forstmt
+    | whilestmt
+    | repeatstmt
+    | returnstmnt
+    | continuestmt
+    | breakstmt
+    | COMMENT;
+
+function_block: (function_statement NEWLINE+)*;
