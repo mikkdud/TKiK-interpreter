@@ -50,7 +50,7 @@ FUNCTION  : 'FUNKCYJO';
 RETURN    : 'NAZOT';
 FOR       : 'DLA' ;
 WHILE     : 'PÓKI' ;
-REPEAT    : 'CIOMPLOJ' | 'cimploj' ;
+REPEAT    : 'CIOMPLOJ' | 'ciomploj' ;
 UNTIL     : 'AŻ' ;
 STEP      : 'CO' ;
 NEXT      : 'NEXT' | 'next' ;
