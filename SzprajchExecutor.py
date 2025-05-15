@@ -27,3 +27,29 @@ class SzprajchExecutor(SzprajchVisitor):
         if name not in self.variables:
             raise NameError(f"Zmienna '{name}' nie została zadeklarowana")
         return self.variables[name]
+
+    def visitAddSubExpr(self, ctx):
+        left = self.visit(ctx.expression(0))
+        right = self.visit(ctx.expression(1))
+        operator = ctx.getChild(1).getText()
+
+        if operator == '+':
+            return left + right
+        elif operator == '-':
+            return left - right
+        else:
+            raise ValueError(f"Nieobsługiwany operator: {operator}")
+
+    def visitMulDivExpr(self, ctx):
+        left = self.visit(ctx.expression(0))
+        right = self.visit(ctx.expression(1))
+        operator = ctx.getChild(1).getText()
+
+        if operator == '*':
+            return left * right
+        elif operator == '/':
+            if right == 0:
+                raise ZeroDivisionError("Dzielenie przez zero")
+            return left // right  # dzielenie całkowite
+        else:
+            raise ValueError(f"Nieobsługiwany operator: {operator}")

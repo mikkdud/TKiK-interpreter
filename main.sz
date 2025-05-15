@@ -1,2 +1,3 @@
-ZMIYNNO x = 5
-ZMIYNNO y = x
+ZMIYNNO x = 6
+ZMIYNNO y = x * 2
+ZMIYNNO z = y / 3
