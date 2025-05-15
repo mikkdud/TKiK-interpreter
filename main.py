@@ -2,7 +2,7 @@ from antlr4 import *
 from gen.Szprajch.SzprajchLexer import SzprajchLexer
 from gen.Szprajch.SzprajchParser import SzprajchParser
 from gen.Szprajch.SzprajchVisitor import SzprajchVisitor
-
+from SzprajchExecutor import SzprajchExecutor  # ⬅ dodano
 
 from graphviz import Digraph
 
@@ -27,13 +27,27 @@ def visualize_tree(tree, parser):
     print_tree(tree, parser, dot)
     dot.render('ast_output', view=True, format='png')  # ast_output.png
 
+# === Główna logika ===
 
-input_text = FileStream("main.sz")
+input_text = FileStream("main.sz", encoding="utf-8")
 lexer = SzprajchLexer(input_text)
 stream = CommonTokenStream(lexer)
 parser = SzprajchParser(stream)
 
 tree = parser.program()
 
+# 1. Pokaż drzewo składniowe
+print("Drzewo składniowe:")
 print(tree.toStringTree(recog=parser))
 visualize_tree(tree, parser)
+
+# 2. Uruchom interpreter
+print("\n--- Wykonywanie programu ---")
+executor = SzprajchExecutor()
+executor.visit(tree)
+
+# 3. Wyświetl końcowy stan zmiennych
+print("\n--- Zmienne po wykonaniu ---")
+for var, val in executor.variables.items():
+    print(f"{var} = {val}")
+ 

@@ -1,8 +1,2 @@
-FUNKCYJO kwadrat(x)
-    NAZOT x * x
-KONIEC
-
-ZMIYNNO wynik = kwadrat(4)
-
-ZMIYNNO numery = [1, 2, 3]
-ZMIYNNO x = numery[1]
+ZMIYNNO x = 5
+ZMIYNNO y = x
