@@ -1,3 +1,8 @@
-ZMIYNNO x = 6
-ZMIYNNO y = x * 2
-ZMIYNNO z = y / 3
+ZMIYNNO x = 5
+ZMIYNNO y = 3
+
+GODKA Dodajemy liczby
+ZMIYNNO suma = x + y
+
+GODKA Wynik
+GODEJ suma
