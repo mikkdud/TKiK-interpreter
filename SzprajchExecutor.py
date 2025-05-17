@@ -98,3 +98,11 @@ class SzprajchExecutor(SzprajchVisitor):
             self.visit(ctx.block())
             self.variables[varname] += step
 
+    def visitNotExpr(self, ctx):
+        value = self.visit(ctx.expression())
+        return int(not value)
+
+    def visitLogicalAndExpr(self, ctx):
+        left = self.visit(ctx.expression(0))
+        right = self.visit(ctx.expression(1))
+        return int(bool(left) and bool(right))

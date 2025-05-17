@@ -2,10 +2,16 @@
 digraph {
 	0 [label="ZMIYNNOp=1
 ZMIYNNOq=0
-GODEJNIYq<EOF><EOF>"]
+JAKpINIYq
+POTYM
+GODEJ999
+KONIEC<EOF><EOF>"]
 	1 [label="ZMIYNNOp=1
 ZMIYNNOq=0
-GODEJNIYq<EOF>"]
+JAKpINIYq
+POTYM
+GODEJ999
+KONIEC<EOF>"]
 	0 -> 1
 	2 [label="ZMIYNNOp=1"]
 	1 -> 2
@@ -27,14 +33,37 @@ GODEJNIYq<EOF>"]
 	8 -> 10
 	11 [label=0]
 	10 -> 11
-	12 [label=GODEJNIYq]
+	12 [label="JAKpINIYq
+POTYM
+GODEJ999
+KONIEC"]
 	1 -> 12
-	13 [label=GODEJNIYq]
+	13 [label="JAKpINIYq
+POTYM
+GODEJ999
+KONIEC"]
 	12 -> 13
-	14 [label=NIYq]
+	14 [label=pINIYq]
 	13 -> 14
-	15 [label=q]
+	15 [label=p]
 	14 -> 15
-	16 [label=q]
+	16 [label=p]
 	15 -> 16
+	17 [label=NIYq]
+	14 -> 17
+	18 [label=q]
+	17 -> 18
+	19 [label=q]
+	18 -> 19
+	20 [label=GODEJ999
+]
+	13 -> 20
+	21 [label=GODEJ999]
+	20 -> 21
+	22 [label=GODEJ999]
+	21 -> 22
+	23 [label=999]
+	22 -> 23
+	24 [label=999]
+	23 -> 24
 }
