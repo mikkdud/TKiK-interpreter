@@ -7,20 +7,20 @@ from SzprajchExecutor import SzprajchExecutor  # ⬅ dodano
 from graphviz import Digraph
 
 def print_tree(node, parser, graph, parent_id=None, node_id=0):
-    label = parser.ruleNames[node.getRuleIndex()] if hasattr(node, "getRuleIndex") else str(node)
-    cur_id = str(node_id)
-    graph.node(cur_id, label)
+    if node is None or not hasattr(node, "children"):
+        return node_id
 
+    label = str(node.getText()).replace('"', r'\"')
+    cur_id = node_id
+    graph.node(str(cur_id), label)
     if parent_id is not None:
-        graph.edge(parent_id, cur_id)
+        graph.edge(str(parent_id), str(cur_id))
 
-    if hasattr(node, 'children'):
-        child_id = node_id + 1
-        for child in node.children:
-            child_id = print_tree(child, parser, graph, cur_id, child_id)
-        return child_id
-    else:
-        return node_id + 1
+    node_id += 1
+    for child in node.children:
+        node_id = print_tree(child, parser, graph, cur_id, node_id)
+    return node_id
+
 
 def visualize_tree(tree, parser):
     dot = Digraph(comment='AST')
