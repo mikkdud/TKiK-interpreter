@@ -1,8 +1,10 @@
 ZMIYNNO x = 5
-ZMIYNNO y = 3
+ZMIYNNO y = 10
 
-GODKA Dodajemy liczby
-ZMIYNNO suma = x + y
+GODKA Sprawdzamy, która liczba jest większa
 
-GODKA Wynik
-GODEJ suma
+JAK x > y POTYM
+    GODEJ x
+INKSZY
+    GODEJ y
+KONIEC

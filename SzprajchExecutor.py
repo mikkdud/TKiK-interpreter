@@ -67,3 +67,23 @@ class SzprajchExecutor(SzprajchVisitor):
     def visitComment(self, ctx):
         # Komentarze są ignorowane
         pass
+
+    def visitForstmt(self, ctx):
+        # Obsługa pętli FOR ... DO ... KONIEC
+        varname = ctx.varname().getText()
+        start = self.visit(ctx.expression(0))
+        end = self.visit(ctx.expression(1))
+        step = self.visit(ctx.expression(2)) if ctx.expression(2) else 1
+
+        self.variables[varname] = start
+        while (step > 0 and self.variables[varname] <= end) or (step < 0 and self.variables[varname] >= end):
+            self.visit(ctx.block())
+            self.variables[varname] += step
+
+    def visitIfstmt(self, ctx):
+        # Obsługa instrukcji warunkowej JAK ... POTYM ... INKSZY ... KONIEC
+        condition = self.visit(ctx.expression())
+        if condition:
+            self.visit(ctx.block())
+        elif ctx.elsestmt():
+            self.visit(ctx.elsestmt())

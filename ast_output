@@ -40,7 +40,7 @@ digraph {
 	13 -> 18
 	19 [label=number]
 	18 -> 19
-	20 [label=3]
+	20 [label=10]
 	19 -> 20
 	21 [label="
 "]
@@ -51,58 +51,82 @@ digraph {
 	23 [label="
 "]
 	1 -> 23
-	24 [label=statement]
+	24 [label="
+"]
 	1 -> 24
-	25 [label=assignmentstmt]
-	24 -> 25
-	26 [label=ZMIYNNO]
+	25 [label=statement]
+	1 -> 25
+	26 [label=ifstmt]
 	25 -> 26
-	27 [label=varname]
-	25 -> 27
-	28 [label=suma]
-	27 -> 28
-	29 [label="="]
-	25 -> 29
-	30 [label=expression]
-	25 -> 30
-	31 [label=expression]
+	27 [label=JAK]
+	26 -> 27
+	28 [label=expression]
+	26 -> 28
+	29 [label=expression]
+	28 -> 29
+	30 [label=id]
+	29 -> 30
+	31 [label=x]
 	30 -> 31
-	32 [label=id]
-	31 -> 32
-	33 [label=x]
-	32 -> 33
-	34 [label="+"]
-	30 -> 34
-	35 [label=expression]
-	30 -> 35
-	36 [label=id]
-	35 -> 36
-	37 [label=y]
-	36 -> 37
-	38 [label="
+	32 [label=">"]
+	28 -> 32
+	33 [label=expression]
+	28 -> 33
+	34 [label=id]
+	33 -> 34
+	35 [label=y]
+	34 -> 35
+	36 [label=POTYM]
+	26 -> 36
+	37 [label="
 "]
-	1 -> 38
-	39 [label="
-"]
-	1 -> 39
-	40 [label="
-"]
-	1 -> 40
-	41 [label=statement]
-	1 -> 41
-	42 [label=printstmt]
-	41 -> 42
-	43 [label=GODEJ]
+	26 -> 37
+	38 [label=block]
+	26 -> 38
+	39 [label=statement]
+	38 -> 39
+	40 [label=printstmt]
+	39 -> 40
+	41 [label=GODEJ]
+	40 -> 41
+	42 [label=expression]
+	40 -> 42
+	43 [label=id]
 	42 -> 43
-	44 [label=expression]
-	42 -> 44
-	45 [label=id]
-	44 -> 45
-	46 [label=suma]
-	45 -> 46
-	47 [label="
+	44 [label=x]
+	43 -> 44
+	45 [label="
 "]
-	1 -> 47
-	48 [label=<EOF>]
-	0 -> 48
+	38 -> 45
+	46 [label=elsestmt]
+	26 -> 46
+	47 [label=INKSZY]
+	46 -> 47
+	48 [label="
+"]
+	46 -> 48
+	49 [label=block]
+	46 -> 49
+	50 [label=statement]
+	49 -> 50
+	51 [label=printstmt]
+	50 -> 51
+	52 [label=GODEJ]
+	51 -> 52
+	53 [label=expression]
+	51 -> 53
+	54 [label=id]
+	53 -> 54
+	55 [label=y]
+	54 -> 55
+	56 [label="
+"]
+	49 -> 56
+	57 [label=KONIEC]
+	26 -> 57
+	58 [label="
+"]
+	1 -> 58
+	59 [label=<EOF>]
+	0 -> 59
 }
