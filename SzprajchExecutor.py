@@ -1,9 +1,11 @@
 from gen.Szprajch.SzprajchVisitor import SzprajchVisitor
+from gen.Szprajch.SzprajchParser import SzprajchParser
 
 class SzprajchExecutor(SzprajchVisitor):
     def __init__(self):
         super().__init__()
         self.variables = {}  # Słownik na zmienne
+        self.functions = {}
 
     def visitProgram(self, ctx):
         for child in ctx.children:
@@ -106,3 +108,52 @@ class SzprajchExecutor(SzprajchVisitor):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         return int(bool(left) and bool(right))
+    
+    def visitFunctiondef(self, ctx):
+        func_name = ctx.ID().getText()
+        params = [token.getText() for token in ctx.paramlist().getTokens(SzprajchParser.ID)]
+        block = ctx.function_block()
+        self.functions[func_name] = (params, block)
+
+    
+    def visitFunctioncall(self, ctx):
+        func_name = ctx.ID().getText()
+        args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
+
+        if func_name not in self.functions:
+            raise NameError(f"Nie znaleziono funkcji '{func_name}'")
+
+        params, block = self.functions[func_name]
+
+        if len(params) != len(args):
+            raise TypeError(f"Funkcja '{func_name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}")
+
+        previous_scope = self.variables.copy()
+        self.variables = dict(zip(params, args))
+
+        result = None
+        for stmt in block.function_statement():
+            result = self.visit(stmt)
+            if result is not None:
+                break
+
+        self.variables = previous_scope
+
+        return result
+
+
+
+    def visitReturnstmnt(self, ctx):
+        return self.visit(ctx.expression())
+    
+    def visitFunctionCallExpr(self, ctx):
+        return self.visit(ctx.functioncall())
+
+    
+
+
+class ReturnException(Exception):
+    def __init__(self, value):
+        self.value = value
+
+

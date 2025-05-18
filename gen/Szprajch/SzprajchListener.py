@@ -1,4 +1,4 @@
-# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .SzprajchParser import SzprajchParser
@@ -170,6 +170,42 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchParser#loop_statement.
+    def enterLoop_statement(self, ctx:SzprajchParser.Loop_statementContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#loop_statement.
+    def exitLoop_statement(self, ctx:SzprajchParser.Loop_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#loop_block.
+    def enterLoop_block(self, ctx:SzprajchParser.Loop_blockContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#loop_block.
+    def exitLoop_block(self, ctx:SzprajchParser.Loop_blockContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#function_statement.
+    def enterFunction_statement(self, ctx:SzprajchParser.Function_statementContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#function_statement.
+    def exitFunction_statement(self, ctx:SzprajchParser.Function_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#function_block.
+    def enterFunction_block(self, ctx:SzprajchParser.Function_blockContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#function_block.
+    def exitFunction_block(self, ctx:SzprajchParser.Function_blockContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchParser#AndExpr.
     def enterAndExpr(self, ctx:SzprajchParser.AndExprContext):
         pass
@@ -296,6 +332,15 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchParser#FuncCallExpr.
+    def enterFuncCallExpr(self, ctx:SzprajchParser.FuncCallExprContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#FuncCallExpr.
+    def exitFuncCallExpr(self, ctx:SzprajchParser.FuncCallExprContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchParser#func.
     def enterFunc(self, ctx:SzprajchParser.FuncContext):
         pass
@@ -329,15 +374,6 @@ class SzprajchListener(ParseTreeListener):
 
     # Exit a parse tree produced by SzprajchParser#number.
     def exitNumber(self, ctx:SzprajchParser.NumberContext):
-        pass
-
-
-    # Enter a parse tree produced by SzprajchParser#id.
-    def enterId(self, ctx:SzprajchParser.IdContext):
-        pass
-
-    # Exit a parse tree produced by SzprajchParser#id.
-    def exitId(self, ctx:SzprajchParser.IdContext):
         pass
 
 

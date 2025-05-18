@@ -1,6 +1,11 @@
+FUNKCYJO kwadrat(x)
+    NAZOT x - 10
+KONIEC
+
 ZMIYNNO p = 1
 ZMIYNNO q = 0
 JAK p I NIY q
 POTYM
-    GODEJ 999
+    ZMIYNNO wynik = kwadrat(4)
+    GODEJ wynik
 KONIEC

@@ -25,7 +25,7 @@ def print_tree(node, parser, graph, parent_id=None, node_id=0):
 def visualize_tree(tree, parser):
     dot = Digraph(comment='AST')
     print_tree(tree, parser, dot)
-    dot.render('ast_output', view=True, format='png')  # ast_output.png
+    dot.render('ast_output', view=False, format='png')  # ast_output.png
 
 # === Główna logika ===
 

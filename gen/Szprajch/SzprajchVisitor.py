@@ -1,4 +1,4 @@
-# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .SzprajchParser import SzprajchParser
@@ -99,6 +99,26 @@ class SzprajchVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SzprajchParser#loop_statement.
+    def visitLoop_statement(self, ctx:SzprajchParser.Loop_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SzprajchParser#loop_block.
+    def visitLoop_block(self, ctx:SzprajchParser.Loop_blockContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SzprajchParser#function_statement.
+    def visitFunction_statement(self, ctx:SzprajchParser.Function_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SzprajchParser#function_block.
+    def visitFunction_block(self, ctx:SzprajchParser.Function_blockContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SzprajchParser#AndExpr.
     def visitAndExpr(self, ctx:SzprajchParser.AndExprContext):
         return self.visitChildren(ctx)
@@ -169,6 +189,11 @@ class SzprajchVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SzprajchParser#FuncCallExpr.
+    def visitFuncCallExpr(self, ctx:SzprajchParser.FuncCallExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SzprajchParser#func.
     def visitFunc(self, ctx:SzprajchParser.FuncContext):
         return self.visitChildren(ctx)
@@ -186,11 +211,6 @@ class SzprajchVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by SzprajchParser#number.
     def visitNumber(self, ctx:SzprajchParser.NumberContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by SzprajchParser#id.
-    def visitId(self, ctx:SzprajchParser.IdContext):
         return self.visitChildren(ctx)
 
 
