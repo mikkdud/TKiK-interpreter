@@ -8,14 +8,14 @@ FUNKCYJO print_list(numery)
     NEXT
 KONIEC
 
-ZMIYNNO p = 1
+ZMIYNNO p = -1
 ZMIYNNO q = 2
 
-JAK p < 0
+JAK p < -5
 POTYM
     ZMIYNNO wynik = kwadrat(6)
     GODEJ wynik
-INKSZY JAK p > 2
+INKSZY JAK p + 4 > 2
 POTYM
     ZMIYNNO wynik = kwadrat(-2)
     GODEJ wynik

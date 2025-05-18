@@ -10,14 +10,14 @@ GODEJnumery[i]
 NEXT
 KONIEC
 
-ZMIYNNOp=1
+ZMIYNNOp=-1
 ZMIYNNOq=2
 
-JAKp<0
+JAKp<-5
 POTYM
 ZMIYNNOwynik=kwadrat(6)
 GODEJwynik
-INKSZYJAKp>2
+INKSZYJAKp+4>2
 POTYM
 ZMIYNNOwynik=kwadrat(-2)
 GODEJwynik
@@ -41,14 +41,14 @@ GODEJnumery[i]
 NEXT
 KONIEC
 
-ZMIYNNOp=1
+ZMIYNNOp=-1
 ZMIYNNOq=2
 
-JAKp<0
+JAKp<-5
 POTYM
 ZMIYNNOwynik=kwadrat(6)
 GODEJwynik
-INKSZYJAKp>2
+INKSZYJAKp+4>2
 POTYM
 ZMIYNNOwynik=kwadrat(-2)
 GODEJwynik
@@ -152,31 +152,33 @@ NEXT"]
 	33 -> 34
 	35 [label=i]
 	33 -> 35
-	36 [label="ZMIYNNOp=1"]
+	36 [label="ZMIYNNOp=-1"]
 	1 -> 36
-	37 [label="ZMIYNNOp=1"]
+	37 [label="ZMIYNNOp=-1"]
 	36 -> 37
 	38 [label=p]
 	37 -> 38
-	39 [label=1]
+	39 [label=-1]
 	37 -> 39
 	40 [label=1]
 	39 -> 40
-	41 [label="ZMIYNNOq=2"]
-	1 -> 41
+	41 [label=1]
+	40 -> 41
 	42 [label="ZMIYNNOq=2"]
-	41 -> 42
-	43 [label=q]
+	1 -> 42
+	43 [label="ZMIYNNOq=2"]
 	42 -> 43
-	44 [label=2]
-	42 -> 44
+	44 [label=q]
+	43 -> 44
 	45 [label=2]
-	44 -> 45
-	46 [label="JAKp<0
+	43 -> 45
+	46 [label=2]
+	45 -> 46
+	47 [label="JAKp<-5
 POTYM
 ZMIYNNOwynik=kwadrat(6)
 GODEJwynik
-INKSZYJAKp>2
+INKSZYJAKp+4>2
 POTYM
 ZMIYNNOwynik=kwadrat(-2)
 GODEJwynik
@@ -184,12 +186,12 @@ INKSZY
 ZMIYNNOwynik=kwadrat(3)
 GODEJwynik
 KONIEC"]
-	1 -> 46
-	47 [label="JAKp<0
+	1 -> 47
+	48 [label="JAKp<-5
 POTYM
 ZMIYNNOwynik=kwadrat(6)
 GODEJwynik
-INKSZYJAKp>2
+INKSZYJAKp+4>2
 POTYM
 ZMIYNNOwynik=kwadrat(-2)
 GODEJwynik
@@ -197,142 +199,150 @@ INKSZY
 ZMIYNNOwynik=kwadrat(3)
 GODEJwynik
 KONIEC"]
-	46 -> 47
-	48 [label="p<0"]
 	47 -> 48
-	49 [label=p]
+	49 [label="p<-5"]
 	48 -> 49
-	50 [label=0]
-	48 -> 50
-	51 [label=0]
-	50 -> 51
-	52 [label="ZMIYNNOwynik=kwadrat(6)
+	50 [label=p]
+	49 -> 50
+	51 [label=-5]
+	49 -> 51
+	52 [label=5]
+	51 -> 52
+	53 [label=5]
+	52 -> 53
+	54 [label="ZMIYNNOwynik=kwadrat(6)
 GODEJwynik
 "]
-	47 -> 52
-	53 [label="ZMIYNNOwynik=kwadrat(6)"]
-	52 -> 53
-	54 [label="ZMIYNNOwynik=kwadrat(6)"]
-	53 -> 54
-	55 [label=wynik]
+	48 -> 54
+	55 [label="ZMIYNNOwynik=kwadrat(6)"]
 	54 -> 55
-	56 [label="kwadrat(6)"]
-	54 -> 56
-	57 [label="kwadrat(6)"]
+	56 [label="ZMIYNNOwynik=kwadrat(6)"]
+	55 -> 56
+	57 [label=wynik]
 	56 -> 57
-	58 [label=6]
-	57 -> 58
-	59 [label=6]
+	58 [label="kwadrat(6)"]
+	56 -> 58
+	59 [label="kwadrat(6)"]
 	58 -> 59
 	60 [label=6]
 	59 -> 60
-	61 [label=GODEJwynik]
-	52 -> 61
-	62 [label=GODEJwynik]
+	61 [label=6]
+	60 -> 61
+	62 [label=6]
 	61 -> 62
-	63 [label=wynik]
-	62 -> 63
-	64 [label="INKSZYJAKp>2
+	63 [label=GODEJwynik]
+	54 -> 63
+	64 [label=GODEJwynik]
+	63 -> 64
+	65 [label=wynik]
+	64 -> 65
+	66 [label="INKSZYJAKp+4>2
 POTYM
 ZMIYNNOwynik=kwadrat(-2)
 GODEJwynik
 "]
-	47 -> 64
-	65 [label="p>2"]
-	64 -> 65
-	66 [label=p]
-	65 -> 66
-	67 [label=2]
-	65 -> 67
-	68 [label=2]
+	48 -> 66
+	67 [label="p+4>2"]
+	66 -> 67
+	68 [label="p+4"]
 	67 -> 68
-	69 [label="ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
-"]
-	64 -> 69
-	70 [label="ZMIYNNOwynik=kwadrat(-2)"]
-	69 -> 70
-	71 [label="ZMIYNNOwynik=kwadrat(-2)"]
+	69 [label=p]
+	68 -> 69
+	70 [label=4]
+	68 -> 70
+	71 [label=4]
 	70 -> 71
-	72 [label=wynik]
-	71 -> 72
-	73 [label="kwadrat(-2)"]
-	71 -> 73
-	74 [label="kwadrat(-2)"]
-	73 -> 74
-	75 [label=-2]
+	72 [label=2]
+	67 -> 72
+	73 [label=2]
+	72 -> 73
+	74 [label="ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+"]
+	66 -> 74
+	75 [label="ZMIYNNOwynik=kwadrat(-2)"]
 	74 -> 75
-	76 [label=-2]
+	76 [label="ZMIYNNOwynik=kwadrat(-2)"]
 	75 -> 76
-	77 [label=2]
+	77 [label=wynik]
 	76 -> 77
-	78 [label=2]
-	77 -> 78
-	79 [label=GODEJwynik]
-	69 -> 79
-	80 [label=GODEJwynik]
+	78 [label="kwadrat(-2)"]
+	76 -> 78
+	79 [label="kwadrat(-2)"]
+	78 -> 79
+	80 [label=-2]
 	79 -> 80
-	81 [label=wynik]
+	81 [label=-2]
 	80 -> 81
-	82 [label="INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
-"]
-	47 -> 82
-	83 [label="ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
-"]
+	82 [label=2]
+	81 -> 82
+	83 [label=2]
 	82 -> 83
-	84 [label="ZMIYNNOwynik=kwadrat(3)"]
-	83 -> 84
-	85 [label="ZMIYNNOwynik=kwadrat(3)"]
+	84 [label=GODEJwynik]
+	74 -> 84
+	85 [label=GODEJwynik]
 	84 -> 85
 	86 [label=wynik]
 	85 -> 86
-	87 [label="kwadrat(3)"]
-	85 -> 87
-	88 [label="kwadrat(3)"]
+	87 [label="INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+"]
+	48 -> 87
+	88 [label="ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+"]
 	87 -> 88
-	89 [label=3]
+	89 [label="ZMIYNNOwynik=kwadrat(3)"]
 	88 -> 89
-	90 [label=3]
+	90 [label="ZMIYNNOwynik=kwadrat(3)"]
 	89 -> 90
-	91 [label=3]
+	91 [label=wynik]
 	90 -> 91
-	92 [label=GODEJwynik]
-	83 -> 92
-	93 [label=GODEJwynik]
+	92 [label="kwadrat(3)"]
+	90 -> 92
+	93 [label="kwadrat(3)"]
 	92 -> 93
-	94 [label=wynik]
+	94 [label=3]
 	93 -> 94
-	95 [label="ZMIYNNOnumery=[1,2,3]"]
-	1 -> 95
-	96 [label="ZMIYNNOnumery=[1,2,3]"]
+	95 [label=3]
+	94 -> 95
+	96 [label=3]
 	95 -> 96
-	97 [label=numery]
-	96 -> 97
-	98 [label="[1,2,3]"]
-	96 -> 98
-	99 [label="[1,2,3]"]
+	97 [label=GODEJwynik]
+	88 -> 97
+	98 [label=GODEJwynik]
+	97 -> 98
+	99 [label=wynik]
 	98 -> 99
-	100 [label=1]
-	99 -> 100
-	101 [label=1]
+	100 [label="ZMIYNNOnumery=[1,2,3]"]
+	1 -> 100
+	101 [label="ZMIYNNOnumery=[1,2,3]"]
 	100 -> 101
-	102 [label=2]
-	99 -> 102
-	103 [label=2]
-	102 -> 103
-	104 [label=3]
-	99 -> 104
-	105 [label=3]
+	102 [label=numery]
+	101 -> 102
+	103 [label="[1,2,3]"]
+	101 -> 103
+	104 [label="[1,2,3]"]
+	103 -> 104
+	105 [label=1]
 	104 -> 105
-	106 [label="print_list(numery)"]
-	1 -> 106
-	107 [label="print_list(numery)"]
-	106 -> 107
-	108 [label=numery]
+	106 [label=1]
+	105 -> 106
+	107 [label=2]
+	104 -> 107
+	108 [label=2]
 	107 -> 108
-	109 [label=numery]
-	108 -> 109
+	109 [label=3]
+	104 -> 109
+	110 [label=3]
+	109 -> 110
+	111 [label="print_list(numery)"]
+	1 -> 111
+	112 [label="print_list(numery)"]
+	111 -> 112
+	113 [label=numery]
+	112 -> 113
+	114 [label=numery]
+	113 -> 114
 }

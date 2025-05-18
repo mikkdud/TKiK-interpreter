@@ -43,7 +43,7 @@ def serializedATN():
         10,28,12,28,362,9,28,1,29,1,29,1,29,1,29,1,29,1,30,1,30,1,30,1,30,
         1,30,1,31,1,31,1,31,1,31,1,31,1,31,0,1,44,32,0,2,4,6,8,10,12,14,
         16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
-        60,62,0,3,1,0,7,12,2,0,1,2,6,6,1,0,3,4,418,0,64,1,0,0,0,2,77,1,0,
+        60,62,0,3,2,0,1,2,6,6,1,0,3,4,1,0,7,12,418,0,64,1,0,0,0,2,77,1,0,
         0,0,4,90,1,0,0,0,6,94,1,0,0,0,8,100,1,0,0,0,10,102,1,0,0,0,12,105,
         1,0,0,0,14,109,1,0,0,0,16,135,1,0,0,0,18,152,1,0,0,0,20,160,1,0,
         0,0,22,178,1,0,0,0,24,188,1,0,0,0,26,204,1,0,0,0,28,206,1,0,0,0,
@@ -2748,7 +2748,7 @@ class SzprajchParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
                     if la_ == 1:
-                        localctx = SzprajchParser.RelExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = SzprajchParser.MulDivExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 298
                         if not self.precpred(self._ctx, 9):
@@ -2757,7 +2757,7 @@ class SzprajchParser ( Parser ):
                         self.state = 299
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 8064) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 70) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -2767,7 +2767,7 @@ class SzprajchParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = SzprajchParser.MulDivExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = SzprajchParser.AddSubExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 301
                         if not self.precpred(self._ctx, 8):
@@ -2776,7 +2776,7 @@ class SzprajchParser ( Parser ):
                         self.state = 302
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 70) != 0)):
+                        if not(_la==3 or _la==4):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -2786,7 +2786,7 @@ class SzprajchParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = SzprajchParser.AddSubExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = SzprajchParser.RelExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 304
                         if not self.precpred(self._ctx, 7):
@@ -2795,7 +2795,7 @@ class SzprajchParser ( Parser ):
                         self.state = 305
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==3 or _la==4):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 8064) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
