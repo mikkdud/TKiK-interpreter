@@ -14,6 +14,7 @@ statement
     | forstmt
     | whilestmt
     | functiondef
+    | functioncall
     | repeatstmt 
     | COMMENT;
 

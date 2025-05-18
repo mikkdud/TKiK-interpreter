@@ -162,6 +162,21 @@ class SzprajchExecutor(SzprajchVisitor):
     
     def visitFunctionCallExpr(self, ctx):
         return self.visit(ctx.functioncall())
+    
+    def visitList(self, ctx):
+        return [self.visit(child) for child in ctx.expression()]
+
+    def visitIndexExpr(self, ctx):
+        list_obj = self.visit(ctx.expression(0))  # np. numery
+        index = self.visit(ctx.expression(1))     # np. 1
+        return list_obj[index]
+    
+    def visitLenfunc(self, ctx: SzprajchParser.LenfuncContext):
+        list_obj = self.visit(ctx.expression())
+        if not isinstance(list_obj, list):
+            raise TypeError("Funkcja LEN oczekuje listy jako argumentu")
+        return len(list_obj)
+
 
     
 

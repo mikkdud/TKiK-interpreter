@@ -2,8 +2,14 @@ FUNKCYJO kwadrat(x)
     NAZOT x * x
 KONIEC
 
+FUNKCYJO print_list(numery)
+    DLA i = LEN(numery) - 1 DO 0 CO -1
+        GODEJ numery[i]
+    NEXT
+KONIEC
+
 ZMIYNNO p = -2
-ZMIYNNO q = 3
+ZMIYNNO q = 2
 
 JAK p < 0
 POTYM
@@ -15,6 +21,7 @@ POTYM
     GODEJ wynik
 KONIEC
 
-DLA i = q DO 1 CO -1
-    GODEJ i
-NEXT
+ZMIYNNO numery = [1, 2, 3]
+print_list(numery)
+
+
