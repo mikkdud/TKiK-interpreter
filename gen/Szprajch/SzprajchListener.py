@@ -278,6 +278,15 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchParser#NegateExpr.
+    def enterNegateExpr(self, ctx:SzprajchParser.NegateExprContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#NegateExpr.
+    def exitNegateExpr(self, ctx:SzprajchParser.NegateExprContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchParser#MulDivExpr.
     def enterMulDivExpr(self, ctx:SzprajchParser.MulDivExprContext):
         pass

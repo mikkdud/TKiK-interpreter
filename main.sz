@@ -1,11 +1,20 @@
 FUNKCYJO kwadrat(x)
-    NAZOT x - 10
+    NAZOT x * x
 KONIEC
 
-ZMIYNNO p = 1
-ZMIYNNO q = 0
-JAK p I NIY q
+ZMIYNNO p = -2
+ZMIYNNO q = 3
+
+JAK p < 0
 POTYM
-    ZMIYNNO wynik = kwadrat(4)
+    ZMIYNNO wynik = kwadrat(-2)
+    GODEJ wynik
+INKSZY JAK p > 2
+POTYM
+    ZMIYNNO wynik = kwadrat(6)
     GODEJ wynik
 KONIEC
+
+DLA i = q DO 1 CO -1
+    GODEJ i
+NEXT

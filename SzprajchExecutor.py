@@ -83,11 +83,24 @@ class SzprajchExecutor(SzprajchVisitor):
         pass
 
     def visitIfstmt(self, ctx):
-        condition = self.visit(ctx.expression())
-        if condition:
+        if self.visit(ctx.expression()):
             self.visit(ctx.block())
-        elif ctx.elsestmt():
+            return  # zakończ, nie sprawdzaj elif/else
+        for elif_ctx in ctx.elifstmt():
+            if self.visit(elif_ctx.expression()):
+                self.visit(elif_ctx.block())
+                return  # zakończ po pierwszym trafionym elif
+        if ctx.elsestmt():
             self.visit(ctx.elsestmt())
+
+    def visitElifstmt(self, ctx):
+        if self.visit(ctx.expression()):
+            self.visit(ctx.block())
+            return True  # informuje, że warunek był spełniony
+        return False
+
+    def visitElsestmt(self, ctx):
+        self.visit(ctx.block())
 
     def visitForstmt(self, ctx):
         varname = ctx.varname().getText()
@@ -97,7 +110,7 @@ class SzprajchExecutor(SzprajchVisitor):
 
         self.variables[varname] = start
         while (step > 0 and self.variables[varname] <= end) or (step < 0 and self.variables[varname] >= end):
-            self.visit(ctx.block())
+            self.visit(ctx.loop_block())
             self.variables[varname] += step
 
     def visitNotExpr(self, ctx):
@@ -109,13 +122,15 @@ class SzprajchExecutor(SzprajchVisitor):
         right = self.visit(ctx.expression(1))
         return int(bool(left) and bool(right))
     
+    def visitNegateExpr(self, ctx):
+        return -self.visit(ctx.expression())
+    
     def visitFunctiondef(self, ctx):
         func_name = ctx.ID().getText()
         params = [token.getText() for token in ctx.paramlist().getTokens(SzprajchParser.ID)]
         block = ctx.function_block()
         self.functions[func_name] = (params, block)
 
-    
     def visitFunctioncall(self, ctx):
         func_name = ctx.ID().getText()
         args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
@@ -140,7 +155,6 @@ class SzprajchExecutor(SzprajchVisitor):
         self.variables = previous_scope
 
         return result
-
 
 
     def visitReturnstmnt(self, ctx):

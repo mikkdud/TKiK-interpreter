@@ -13,6 +13,7 @@ expression:
     | functioncall                              # FuncCallExpr
     | ID                                        # IdExpr
     | (LPAREN expression RPAREN)                # ParenExpr
+    | SUB expression                            # NegateExpr
     | expression op=(MUL|DIV|MOD) expression    # MulDivExpr
     | expression op=(ADD|SUB) expression        # AddSubExpr
     | expression op=(GTE|GT|LTE|LT|EQ|NEQ) expression   # RelExpr

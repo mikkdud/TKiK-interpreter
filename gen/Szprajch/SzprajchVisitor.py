@@ -159,6 +159,11 @@ class SzprajchVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SzprajchParser#NegateExpr.
+    def visitNegateExpr(self, ctx:SzprajchParser.NegateExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SzprajchParser#MulDivExpr.
     def visitMulDivExpr(self, ctx:SzprajchParser.MulDivExprContext):
         return self.visitChildren(ctx)
