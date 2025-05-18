@@ -14,9 +14,9 @@ expression:
     | ID                                        # IdExpr
     | (LPAREN expression RPAREN)                # ParenExpr
     | SUB expression                            # NegateExpr
+    | expression op=(GTE|GT|LTE|LT|EQ|NEQ) expression   # RelExpr
     | expression op=(MUL|DIV|MOD) expression    # MulDivExpr
     | expression op=(ADD|SUB) expression        # AddSubExpr
-    | expression op=(GTE|GT|LTE|LT|EQ|NEQ) expression   # RelExpr
     | NOT expression                            # NotExpr
     | expression AND expression                 # AndExpr
     | expression OR expression                  # OrExpr

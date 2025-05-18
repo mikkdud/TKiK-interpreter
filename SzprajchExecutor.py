@@ -55,7 +55,7 @@ class SzprajchExecutor(SzprajchVisitor):
         else:
             raise ValueError(f"Nieobsługiwany operator: {operator}")
 
-    def visitRelationalExpr(self, ctx):
+    def visitRelExpr(self, ctx):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         operator = ctx.getChild(1).getText()
