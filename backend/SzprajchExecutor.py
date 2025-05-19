@@ -4,6 +4,7 @@ from gen.Szprajch.SzprajchParser import SzprajchParser
 class SzprajchExecutor(SzprajchVisitor):
     def __init__(self):
         super().__init__()
+        self.output = []  # tutaj będzie wynik końcowy
         self.variables = {}  # Słownik na zmienne
         self.functions = {}
 
@@ -77,8 +78,9 @@ class SzprajchExecutor(SzprajchVisitor):
 
     def visitPrintstmt(self, ctx):
         value = self.visit(ctx.expression())
+        self.output.append(str(value))
         print(value)
-
+    
     def visitComment(self, ctx):
         pass
 
