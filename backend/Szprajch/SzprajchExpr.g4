@@ -10,8 +10,10 @@ expression:
     string                                      # StringExpr
     | number                                    # NumberExpr
     | func                                      # FuncExpr
-    | id                                        # IdExpr
+    | functioncall                              # FuncCallExpr
+    | ID                                        # IdExpr
     | (LPAREN expression RPAREN)                # ParenExpr
+    | SUB expression                            # NegateExpr
     | expression op=(MUL|DIV|MOD) expression    # MulDivExpr
     | expression op=(ADD|SUB) expression        # AddSubExpr
     | expression op=(GTE|GT|LTE|LT|EQ|NEQ) expression   # RelExpr
@@ -34,8 +36,6 @@ list: LBRACKET (expression (COMMA expression)*)? RBRACKET;
 string: STRINGLITERAL;
 
 number: NUMBER;
-
-id: functioncall | ID;
 
 functioncall: ID LPAREN arglist? RPAREN;
 

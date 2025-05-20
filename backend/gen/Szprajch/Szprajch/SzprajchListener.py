@@ -170,6 +170,42 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchParser#loop_statement.
+    def enterLoop_statement(self, ctx:SzprajchParser.Loop_statementContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#loop_statement.
+    def exitLoop_statement(self, ctx:SzprajchParser.Loop_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#loop_block.
+    def enterLoop_block(self, ctx:SzprajchParser.Loop_blockContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#loop_block.
+    def exitLoop_block(self, ctx:SzprajchParser.Loop_blockContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#function_statement.
+    def enterFunction_statement(self, ctx:SzprajchParser.Function_statementContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#function_statement.
+    def exitFunction_statement(self, ctx:SzprajchParser.Function_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#function_block.
+    def enterFunction_block(self, ctx:SzprajchParser.Function_blockContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#function_block.
+    def exitFunction_block(self, ctx:SzprajchParser.Function_blockContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchParser#AndExpr.
     def enterAndExpr(self, ctx:SzprajchParser.AndExprContext):
         pass

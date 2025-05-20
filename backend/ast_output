@@ -1,0 +1,348 @@
+// AST
+digraph {
+	0 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC
+
+FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC
+
+ZMIYNNOp=-1
+ZMIYNNOq=2
+
+JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC
+
+ZMIYNNOnumery=[1,2,3]
+print_list(numery)
+
+
+<EOF>"]
+	1 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC
+
+FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC
+
+ZMIYNNOp=-1
+ZMIYNNOq=2
+
+JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC
+
+ZMIYNNOnumery=[1,2,3]
+print_list(numery)
+
+
+"]
+	0 -> 1
+	2 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC"]
+	1 -> 2
+	3 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC"]
+	2 -> 3
+	4 [label=x]
+	3 -> 4
+	5 [label="NAZOTx*x
+"]
+	3 -> 5
+	6 [label="NAZOTx*x"]
+	5 -> 6
+	7 [label="NAZOTx*x"]
+	6 -> 7
+	8 [label="x*x"]
+	7 -> 8
+	9 [label=x]
+	8 -> 9
+	10 [label=x]
+	8 -> 10
+	11 [label="FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC"]
+	1 -> 11
+	12 [label="FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC"]
+	11 -> 12
+	13 [label=numery]
+	12 -> 13
+	14 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+"]
+	12 -> 14
+	15 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT"]
+	14 -> 15
+	16 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT"]
+	15 -> 16
+	17 [label=i]
+	16 -> 17
+	18 [label="LEN(numery)-1"]
+	16 -> 18
+	19 [label="LEN(numery)"]
+	18 -> 19
+	20 [label="LEN(numery)"]
+	19 -> 20
+	21 [label="LEN(numery)"]
+	20 -> 21
+	22 [label=numery]
+	21 -> 22
+	23 [label=1]
+	18 -> 23
+	24 [label=1]
+	23 -> 24
+	25 [label=0]
+	16 -> 25
+	26 [label=0]
+	25 -> 26
+	27 [label=-1]
+	16 -> 27
+	28 [label=1]
+	27 -> 28
+	29 [label=1]
+	28 -> 29
+	30 [label="GODEJnumery[i]
+"]
+	16 -> 30
+	31 [label="GODEJnumery[i]"]
+	30 -> 31
+	32 [label="GODEJnumery[i]"]
+	31 -> 32
+	33 [label="numery[i]"]
+	32 -> 33
+	34 [label=numery]
+	33 -> 34
+	35 [label=i]
+	33 -> 35
+	36 [label="ZMIYNNOp=-1"]
+	1 -> 36
+	37 [label="ZMIYNNOp=-1"]
+	36 -> 37
+	38 [label=p]
+	37 -> 38
+	39 [label=-1]
+	37 -> 39
+	40 [label=1]
+	39 -> 40
+	41 [label=1]
+	40 -> 41
+	42 [label="ZMIYNNOq=2"]
+	1 -> 42
+	43 [label="ZMIYNNOq=2"]
+	42 -> 43
+	44 [label=q]
+	43 -> 44
+	45 [label=2]
+	43 -> 45
+	46 [label=2]
+	45 -> 46
+	47 [label="JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC"]
+	1 -> 47
+	48 [label="JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC"]
+	47 -> 48
+	49 [label="p<-5"]
+	48 -> 49
+	50 [label=p]
+	49 -> 50
+	51 [label=-5]
+	49 -> 51
+	52 [label=5]
+	51 -> 52
+	53 [label=5]
+	52 -> 53
+	54 [label="ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+"]
+	48 -> 54
+	55 [label="ZMIYNNOwynik=kwadrat(6)"]
+	54 -> 55
+	56 [label="ZMIYNNOwynik=kwadrat(6)"]
+	55 -> 56
+	57 [label=wynik]
+	56 -> 57
+	58 [label="kwadrat(6)"]
+	56 -> 58
+	59 [label="kwadrat(6)"]
+	58 -> 59
+	60 [label=6]
+	59 -> 60
+	61 [label=6]
+	60 -> 61
+	62 [label=6]
+	61 -> 62
+	63 [label=GODEJwynik]
+	54 -> 63
+	64 [label=GODEJwynik]
+	63 -> 64
+	65 [label=wynik]
+	64 -> 65
+	66 [label="INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+"]
+	48 -> 66
+	67 [label="p+4>2"]
+	66 -> 67
+	68 [label="p+4"]
+	67 -> 68
+	69 [label=p]
+	68 -> 69
+	70 [label=4]
+	68 -> 70
+	71 [label=4]
+	70 -> 71
+	72 [label=2]
+	67 -> 72
+	73 [label=2]
+	72 -> 73
+	74 [label="ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+"]
+	66 -> 74
+	75 [label="ZMIYNNOwynik=kwadrat(-2)"]
+	74 -> 75
+	76 [label="ZMIYNNOwynik=kwadrat(-2)"]
+	75 -> 76
+	77 [label=wynik]
+	76 -> 77
+	78 [label="kwadrat(-2)"]
+	76 -> 78
+	79 [label="kwadrat(-2)"]
+	78 -> 79
+	80 [label=-2]
+	79 -> 80
+	81 [label=-2]
+	80 -> 81
+	82 [label=2]
+	81 -> 82
+	83 [label=2]
+	82 -> 83
+	84 [label=GODEJwynik]
+	74 -> 84
+	85 [label=GODEJwynik]
+	84 -> 85
+	86 [label=wynik]
+	85 -> 86
+	87 [label="INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+"]
+	48 -> 87
+	88 [label="ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+"]
+	87 -> 88
+	89 [label="ZMIYNNOwynik=kwadrat(3)"]
+	88 -> 89
+	90 [label="ZMIYNNOwynik=kwadrat(3)"]
+	89 -> 90
+	91 [label=wynik]
+	90 -> 91
+	92 [label="kwadrat(3)"]
+	90 -> 92
+	93 [label="kwadrat(3)"]
+	92 -> 93
+	94 [label=3]
+	93 -> 94
+	95 [label=3]
+	94 -> 95
+	96 [label=3]
+	95 -> 96
+	97 [label=GODEJwynik]
+	88 -> 97
+	98 [label=GODEJwynik]
+	97 -> 98
+	99 [label=wynik]
+	98 -> 99
+	100 [label="ZMIYNNOnumery=[1,2,3]"]
+	1 -> 100
+	101 [label="ZMIYNNOnumery=[1,2,3]"]
+	100 -> 101
+	102 [label=numery]
+	101 -> 102
+	103 [label="[1,2,3]"]
+	101 -> 103
+	104 [label="[1,2,3]"]
+	103 -> 104
+	105 [label=1]
+	104 -> 105
+	106 [label=1]
+	105 -> 106
+	107 [label=2]
+	104 -> 107
+	108 [label=2]
+	107 -> 108
+	109 [label=3]
+	104 -> 109
+	110 [label=3]
+	109 -> 110
+	111 [label="print_list(numery)"]
+	1 -> 111
+	112 [label="print_list(numery)"]
+	111 -> 112
+	113 [label=numery]
+	112 -> 113
+	114 [label=numery]
+	113 -> 114
+}
