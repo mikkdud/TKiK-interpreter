@@ -51,11 +51,11 @@ RETURN    : 'NAZOT';
 FOR       : 'DLA' ;
 WHILE     : 'PÓKI' ;
 REPEAT    : 'CIOMPLOJ' | 'ciomploj' ;
-UNTIL     : 'AŻ' ;
+UNTIL     : 'AŻ' | 'AZ' ;
 STEP      : 'CO' ;
 NEXT      : 'NEXT' | 'next' ;
 TO        : 'DO' ;
-CONTINUE  : 'CIŚ' ;
+CONTINUE  : 'CIŚ' | 'CIS' ;
 BREAK     : 'STOPNIJ' ;
 
 // comments

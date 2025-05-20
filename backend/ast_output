@@ -1,6 +1,9 @@
 // AST
 digraph {
-	0 [label="FUNKCYJOkwadrat(x)
+	0 [label="
+
+
+FUNKCYJOkwadrat(x)
 NAZOTx*x
 KONIEC
 
@@ -12,6 +15,7 @@ KONIEC
 
 ZMIYNNOp=-1
 ZMIYNNOq=2
+
 
 JAKp<-5
 POTYM
@@ -29,9 +33,23 @@ KONIEC
 ZMIYNNOnumery=[1,2,3]
 print_list(numery)
 
+
+ZMIYNNOi=0
+CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5
 
 <EOF>"]
-	1 [label="FUNKCYJOkwadrat(x)
+	1 [label="
+
+
+FUNKCYJOkwadrat(x)
 NAZOTx*x
 KONIEC
 
@@ -43,6 +61,7 @@ KONIEC
 
 ZMIYNNOp=-1
 ZMIYNNOq=2
+
 
 JAKp<-5
 POTYM
@@ -60,6 +79,17 @@ KONIEC
 ZMIYNNOnumery=[1,2,3]
 print_list(numery)
 
+
+ZMIYNNOi=0
+CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5
 
 "]
 	0 -> 1
@@ -345,4 +375,107 @@ GODEJwynik
 	112 -> 113
 	114 [label=numery]
 	113 -> 114
+	115 [label="ZMIYNNOi=0"]
+	1 -> 115
+	116 [label="ZMIYNNOi=0"]
+	115 -> 116
+	117 [label=i]
+	116 -> 117
+	118 [label=0]
+	116 -> 118
+	119 [label=0]
+	118 -> 119
+	120 [label="CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5"]
+	1 -> 120
+	121 [label="CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5"]
+	120 -> 121
+	122 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+"]
+	121 -> 122
+	123 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC"]
+	122 -> 123
+	124 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC"]
+	123 -> 124
+	125 [label="i<>3"]
+	124 -> 125
+	126 [label=i]
+	125 -> 126
+	127 [label=3]
+	125 -> 127
+	128 [label=3]
+	127 -> 128
+	129 [label="GODEJi
+"]
+	124 -> 129
+	130 [label=GODEJi]
+	129 -> 130
+	131 [label=GODEJi]
+	130 -> 131
+	132 [label=i]
+	131 -> 132
+	133 [label="INKSZY
+CIS
+"]
+	124 -> 133
+	134 [label="CIS
+"]
+	133 -> 134
+	135 [label=CIS]
+	134 -> 135
+	136 [label=CIS]
+	135 -> 136
+	137 [label="i=i+1"]
+	122 -> 137
+	138 [label="i=i+1"]
+	137 -> 138
+	139 [label=i]
+	138 -> 139
+	140 [label="i+1"]
+	138 -> 140
+	141 [label=i]
+	140 -> 141
+	142 [label=1]
+	140 -> 142
+	143 [label=1]
+	142 -> 143
+	144 [label="i>=5"]
+	121 -> 144
+	145 [label=i]
+	144 -> 145
+	146 [label=5]
+	144 -> 146
+	147 [label=5]
+	146 -> 147
 }

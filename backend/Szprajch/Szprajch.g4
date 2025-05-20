@@ -13,13 +13,14 @@ statement
     | ifstmt
     | forstmt
     | whilestmt
+    | repeatstmt
+    | continuestmt   
+    | breakstmt 
     | functiondef
     | functioncall
-    | repeatstmt 
     | COMMENT;
 
-
-block: (statement (NEWLINE+ | EOF))*;
+block: (statement NEWLINE* | COMMENT | NEWLINE)* ;
 
 assignmentstmt: LET? varname EQ expression;
 

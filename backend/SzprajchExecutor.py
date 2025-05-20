@@ -179,12 +179,36 @@ class SzprajchExecutor(SzprajchVisitor):
             raise TypeError("Funkcja LEN oczekuje listy jako argumentu")
         return len(list_obj)
 
+    def visitRepeatstmt(self, ctx:SzprajchParser.RepeatstmtContext):
+        while True:
+            # Wykonaj blok pętli
+            for child in ctx.loop_block().children:
+                result = self.visit(child)
 
-    
+                # Obsługa break/continue
+                if isinstance(result, BreakSignal):
+                    return  # wyjście z pętli
+                if isinstance(result, ContinueSignal):
+                    break  # przejście do następnej iteracji
+
+            # Sprawdź warunek zakończenia pętli
+            condition = self.visit(ctx.expression())
+            if condition:
+                break
+
+    def visitBreakstmt(self, ctx):
+        return BreakSignal()
+
+    def visitContinuestmt(self, ctx):
+        return ContinueSignal()
+
 
 
 class ReturnException(Exception):
     def __init__(self, value):
         self.value = value
+
+class BreakSignal: pass
+class ContinueSignal: pass
 
 
