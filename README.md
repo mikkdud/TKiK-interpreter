@@ -167,8 +167,9 @@ Instrukcja konfiguracji ANTLR-a w systemach Linux i Windows.
 ```bash
 cd /usr/local/lib
 sudo curl -O https://www.antlr.org/download/antlr-4.13.1-complete.jar
+```
 
-### 2. Dodaj alias i CLASSPATH
+#### 2. Dodaj alias i CLASSPATH
 
 ```bash
 echo "export CLASSPATH=\"/usr/local/lib/antlr-4.13.1-complete.jar:\$CLASSPATH\"" >> ~/.bashrc
@@ -250,3 +251,89 @@ Jeśli używasz VS Code i środowisko `venv` zostało utworzone, ale nie działa
 3. Wybierz **(Recommended)** lub interpreter znajdujący się w `./venv/bin/python`
 
 To pozwala edytorowi korzystać z dokładnie tego samego środowiska, w którym zainstalowano bibliotekę `antlr4-python3-runtime`.
+
+---
+
+## 🚀 Instalacja i uruchomienie frontendu oraz backendu
+
+### 🐧 Linux
+
+#### 1. Zainstaluj Node.js i npm (do frontendu)
+```bash
+sudo apt update
+sudo apt install nodejs npm
+node -v
+npm -v
+```
+
+#### 2. Zainstaluj zależności frontendu i uruchom aplikację
+```bash
+cd frontend/
+npm install
+npm start
+```
+Aplikacja frontendowa powinna być dostępna pod adresem [http://localhost:3000](http://localhost:3000).
+
+#### 3. Zainstaluj Pythona i utwórz środowisko dla backendu
+```bash
+cd ../backend/
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+#### 4. Uruchom backend
+```bash
+python app.py
+```
+Backend powinien być dostępny pod adresem [http://localhost:5000](http://localhost:5000) (lub innym, jeśli zmienisz port).
+
+---
+
+### 🪟 Windows
+
+#### 1. Zainstaluj Node.js i npm  
+Pobierz instalator z [https://nodejs.org/](https://nodejs.org/) i zainstaluj.
+
+#### 2. Zainstaluj zależności frontendu i uruchom aplikację
+```powershell
+cd frontend
+npm install
+npm start
+```
+Frontend będzie dostępny na [http://localhost:3000](http://localhost:3000).
+
+#### 3. Zainstaluj Pythona i utwórz środowisko dla backendu
+```powershell
+cd ..\backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+#### 4. Uruchom backend
+```powershell
+python app.py
+```
+Backend będzie dostępny na [http://localhost:5000](http://localhost:5000).
+
+---
+
+### ℹ️ Uwaga dotycząca środowiska `venv`
+
+- **Środowisko wirtualne Pythona (`venv`) znajduje się w katalogu `backend/`.**
+- Zawsze aktywuj środowisko przed instalacją pakietów lub uruchomieniem backendu:
+  - **Linux:** `source venv/bin/activate`
+  - **Windows:** `.\venv\Scripts\activate`
+- Dezaktywuj środowisko poleceniem `deactivate`.
+
+---
+
+**Podsumowanie kroków:**
+1. Zainstaluj Node.js i npm.
+2. Zainstaluj zależności i uruchom frontend (`frontend/`).
+3. Utwórz i aktywuj środowisko Python w `backend/`, zainstaluj zależności, uruchom backend (`backend/`).
+
+---
+
+W razie problemów z zależnościami lub środowiskiem, sprawdź czy aktywujesz środowisko w odpowiednim katalogu (`backend/`) i czy masz aktualne wersje Node.js, npm oraz Pythona.
