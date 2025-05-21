@@ -1,55 +1,51 @@
-ZMIYNNO lista = [10, 20, 30]
 
-lista[1] = 999
-
-GODEJ lista[0]
-GODEJ lista[1]
-GODEJ lista[2]
-
-GODKA funkcyjo, kero ôbliczo drugo moc liczby 
-FUNKCYJO kwadrat(x)
-    NAZOT x * x
-KONIEC
-
-lista[1] = 999
-
-GODEJ lista[0]
-GODEJ lista[1]
-GODEJ lista[2]
-FUNKCYJO print_list(numery)
-    DLA i = LEN(numery) - 1 DO 0 CO -1
-        GODEJ numery[i]
-    NEXT
-KONIEC
-
-ZMIYNNO p = -1
-ZMIYNNO q = 2
-
-
-JAK p < -5
-POTYM
-    ZMIYNNO wynik = kwadrat(6)
-    GODEJ wynik
-INKSZY JAK p + 4 > 2
-POTYM
-    ZMIYNNO wynik = kwadrat(-2)
-    GODEJ wynik
-INKSZY
-    ZMIYNNO wynik = kwadrat(3)
-    GODEJ wynik
-KONIEC
-
-ZMIYNNO numery = [1, 2, 3]
-print_list(numery)
-
-
-ZMIYNNO i = 0
-CIOMPLOJ
-    JAK i <> 3
-    POTYM 
-        GODEJ i
-    INKSZY 
-        CIS
+GODKA funkcyjo, kero liczbyje silnia z podanyj liczby
+FUNKCYJO silnia(n)
+    JAK n = 0 POTYM
+        NAZOT 1
+    INKSZY
+        NAZOT n * silnia(n - 1)
     KONIEC
-    i = i + 1
-AZ i >= 5
+KONIEC
+
+GODKA funkcyjo, kero sprawdzo, czy dana lista ôstô palindromym
+FUNKCYJO czy_palindrom(lista)
+    ZMIYNNO i = 0
+    ZMIYNNO j = LEN(lista) - 1
+    POKI i < j
+        ZMIYNNO l = lista[i]
+        ZMIYNNO r = lista[j]
+        JAK l <> r POTYM
+            NAZOT 0
+        KONIEC
+        i = i + 1
+        j = j - 1
+    KONIEC
+    NAZOT 1
+KONIEC
+
+GODKA funkcyjo, kero szuko piyrszy dzielnik liczby > 1 (prócz 1)
+FUNKCYJO szukaj_pierwszej_parzystej(lista)
+    ZMIYNNO i = 0
+    POKI 1
+        JAK i >= LEN(lista) POTYM
+            NAZOT -1
+        KONIEC
+        JAK lista[i] MOD 2 = 0 POTYM
+            NAZOT lista[i]
+        KONIEC
+        i = i + 1
+    KONIEC
+KONIEC
+
+
+ZMIYNNO wynik = silnia(5)
+GODEJ "5! = " + wynik
+
+ZMIYNNO lista_test = ["ala", "kot", "ala"]
+ZMIYNNO wynik_palindrom = czy_palindrom(lista_test)
+GODEJ wynik_palindrom
+
+ZMIYNNO lista_liczb = [1, 3, 5, 6, 7]
+ZMIYNNO wynik_parzysta = szukaj_pierwszej_parzystej(lista_liczb)
+GODEJ "Pierwsza parzysta liczba w liście: " + wynik_parzysta

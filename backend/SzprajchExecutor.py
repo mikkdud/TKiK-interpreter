@@ -4,9 +4,18 @@ from gen.Szprajch.SzprajchParser import SzprajchParser
 class SzprajchExecutor(SzprajchVisitor):
     def __init__(self):
         super().__init__()
-        self.output = []         # Lista na wyniki wypisywane przez GODEJ
-        self.variables = {}      # Słownik na zmienne globalne
-        self.functions = {}      # Słownik na funkcje użytkownika
+        self.output = []            # Lista na wyniki wypisywane przez GODEJ
+        self.variable_stack = [{}]  # stos słowników zmiennych
+        self.functions = {}         # Słownik na funkcje użytkownika
+
+    def get_variable(self, name):
+        for scope in reversed(self.variable_stack):
+            if name in scope:
+                return scope[name]
+        raise NameError(f"Zmienna '{name}' nie została zadeklarowana")
+
+    def set_variable(self, name, value):
+        self.variable_stack[-1][name] = value
 
     def visitProgram(self, ctx):
         # Główna pętla programu - odwiedza wszystkie instrukcje
@@ -17,7 +26,7 @@ class SzprajchExecutor(SzprajchVisitor):
         # Przypisanie wartości do zmiennej
         varname = ctx.varname().getText()
         value = self.visit(ctx.expression())
-        self.variables[varname] = value
+        self.set_variable(varname, value)
         return value
 
     def visitListElementAssignment(self, ctx):
@@ -25,11 +34,8 @@ class SzprajchExecutor(SzprajchVisitor):
         list_name = ctx.varname().getText()
         index = self.visit(ctx.expression(0))
         value = self.visit(ctx.expression(1))
+        list_obj = self.get_variable(list_name)
 
-        if list_name not in self.variables:
-            raise NameError(f"Zmienna '{list_name}' nie istnieje")
-
-        list_obj = self.variables[list_name]
         if not isinstance(list_obj, list):
             raise TypeError(f"Zmienna '{list_name}' nie jest listą")
 
@@ -41,25 +47,22 @@ class SzprajchExecutor(SzprajchVisitor):
 
     def visitNumberExpr(self, ctx):
         # Zwraca liczbę całkowitą z drzewa składniowego
-        try:
-            return int(ctx.getChild(0).getText())
-        except ValueError:
-            raise ValueError(f"Niepoprawna liczba: {ctx.getText()}")
+        return int(ctx.getChild(0).getText())
 
     def visitIdExpr(self, ctx):
         # Zwraca wartość zmiennej
-        name = ctx.getText()
-        if name not in self.variables:
-            raise NameError(f"Zmienna '{name}' nie została zadeklarowana")
-        return self.variables[name]
+        return self.get_variable(ctx.getText())
 
     def visitAddSubExpr(self, ctx):
         # Obsługa dodawania i odejmowania
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         operator = ctx.getChild(1).getText()
-
+        
         if operator == '+':
+        # Obsługa konkatenacji stringów
+            if isinstance(left, str) or isinstance(right, str):
+                return str(left) + str(right)
             return left + right
         elif operator == '-':
             return left - right
@@ -71,22 +74,23 @@ class SzprajchExecutor(SzprajchVisitor):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         operator = ctx.getChild(1).getText()
-
+        
         if operator == '*':
             return left * right
         elif operator == '/':
             if right == 0:
                 raise ZeroDivisionError("Dzielenie przez zero")
             return left // right
+        elif operator == 'MOD':
+            return left % right
         else:
             raise ValueError(f"Nieobsługiwany operator: {operator}")
 
     def visitRelExpr(self, ctx):
-        # Operatory relacyjne: <, >, <=, >=, =, <>
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         operator = ctx.getChild(1).getText()
-
+        
         if operator == "<":
             return left < right
         elif operator == ">":
@@ -107,7 +111,7 @@ class SzprajchExecutor(SzprajchVisitor):
         value = self.visit(ctx.expression())
         self.output.append(str(value))
         print(value)
-    
+
     def visitComment(self, ctx):
         # Komentarze są ignorowane
         pass
@@ -128,7 +132,7 @@ class SzprajchExecutor(SzprajchVisitor):
         # Obsługa ELIF
         if self.visit(ctx.expression()):
             self.visit(ctx.block())
-            return True  # informuje, że warunek był spełniony
+            return True # informuje, że warunek był spełniony
         return False
 
     def visitElsestmt(self, ctx):
@@ -142,10 +146,10 @@ class SzprajchExecutor(SzprajchVisitor):
         end = self.visit(ctx.expression(1))
         step = self.visit(ctx.expression(2)) if ctx.expression(2) else 1
 
-        self.variables[varname] = start
-        while (step > 0 and self.variables[varname] <= end) or (step < 0 and self.variables[varname] >= end):
+        self.set_variable(varname, start)
+        while (step > 0 and self.get_variable(varname) <= end) or (step < 0 and self.get_variable(varname) >= end):
             self.visit(ctx.loop_block())
-            self.variables[varname] += step
+            self.set_variable(varname, self.get_variable(varname) + step)
 
     def visitNotExpr(self, ctx):
         # Negacja logiczna
@@ -157,11 +161,11 @@ class SzprajchExecutor(SzprajchVisitor):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         return int(bool(left) and bool(right))
-    
+
     def visitNegateExpr(self, ctx):
         # Negacja liczby (np. -x)
         return -self.visit(ctx.expression())
-    
+
     def visitFunctiondef(self, ctx):
         # Definicja funkcji użytkownika
         func_name = ctx.ID().getText()
@@ -170,69 +174,71 @@ class SzprajchExecutor(SzprajchVisitor):
         self.functions[func_name] = (params, block)
 
     def visitFunctioncall(self, ctx):
-        # Wywołanie funkcji użytkownika
-        func_name = ctx.ID().getText()
+    # Wywołanie funkcji użytkownika
+        name = ctx.ID().getText()
         args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
 
-        if func_name not in self.functions:
-            raise NameError(f"Nie znaleziono funkcji '{func_name}'")
+        if name not in self.functions:
+            raise NameError(f"Nie znaleziono funkcji '{name}'")
 
-        params, block = self.functions[func_name]
-
+        params, block = self.functions[name]
         if len(params) != len(args):
-            raise TypeError(f"Funkcja '{func_name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}")
+            raise TypeError(f"Funkcja '{name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}")
 
-        previous_scope = self.variables.copy()
-        self.variables = dict(zip(params, args))
+        # Nowy zakres zmiennych
+        self.variable_stack.append(dict(zip(params, args)))
 
-        result = None
-        for stmt in block.function_statement():
-            result = self.visit(stmt)
-            if result is not None:
-                break
-
-        self.variables = previous_scope
+        try:
+            for stmt in block.function_statement():
+                self.visit(stmt)
+            # Jeśli nie było return, to None
+            result = None
+        except ReturnValue as rv:
+            result = rv.value
+        finally:
+            self.variable_stack.pop()
 
         return result
 
+
     def visitReturnstmnt(self, ctx):
         # Zwraca wartość z funkcji
-        return self.visit(ctx.expression())
-    
+        value = self.visit(ctx.expression())
+        raise ReturnValue(value)
+
     def visitFunctionCallExpr(self, ctx):
         # Wywołanie funkcji jako wyrażenie
         return self.visit(ctx.functioncall())
-    
+
     def visitList(self, ctx):
         # Tworzenie listy
         return [self.visit(child) for child in ctx.expression()]
 
     def visitIndexExpr(self, ctx):
         # Dostęp do elementu listy przez indeks
-        list_obj = self.visit(ctx.expression(0))  # np. numery
-        index = self.visit(ctx.expression(1))     # np. 1
+        list_obj = self.visit(ctx.expression(0))
+        index = self.visit(ctx.expression(1))
         return list_obj[index]
-    
-    def visitLenfunc(self, ctx: SzprajchParser.LenfuncContext):
+
+    def visitLenfunc(self, ctx):
         # Funkcja LEN - długość listy
         list_obj = self.visit(ctx.expression())
         if not isinstance(list_obj, list):
             raise TypeError("Funkcja LEN oczekuje listy jako argumentu")
         return len(list_obj)
 
-    def visitRepeatstmt(self, ctx:SzprajchParser.RepeatstmtContext):
+    def visitRepeatstmt(self, ctx):
         # Pętla repeat-until
         while True:
             # Wykonaj blok pętli
             for child in ctx.loop_block().children:
                 result = self.visit(child)
-
+                
                 # Obsługa break/continue
                 if isinstance(result, BreakSignal):
-                    return  # wyjście z pętli
+                    return
                 if isinstance(result, ContinueSignal):
-                    break  # przejście do następnej iteracji
-
+                    break
             # Sprawdź warunek zakończenia pętli
             condition = self.visit(ctx.expression())
             if condition:
@@ -255,14 +261,24 @@ class SzprajchExecutor(SzprajchVisitor):
                     return
                 if isinstance(result, ContinueSignal):
                     break
+                
+    def visitStringExpr(self, ctx):
+        text = ctx.getText()
+        # Usuwamy cudzysłowy na początku i końcu (np. "tekst" -> tekst)
+        if text.startswith('"') and text.endswith('"'):
+            return text[1:-1]
+        return text
 
-# Wyjątek do obsługi return w funkcjach
-class ReturnException(Exception):
-    def __init__(self, value):
-        self.value = value
+    def visitExpExpr(self, ctx):
+        base = self.visit(ctx.expression(0))
+        exponent = self.visit(ctx.expression(1))
+        return base ** exponent
 
-# Sygnały do obsługi break/continue
+
+# Pomocnicze klasy
 class BreakSignal: pass
 class ContinueSignal: pass
 
-
+class ReturnValue(Exception):
+    def __init__(self, value):
+        self.value = value

@@ -23,7 +23,7 @@ def run_code():
         
         return jsonify({
             'output': 'Program wykonany pomyślnie.',
-            'variables': executor.variables,
+            # 'variables': executor.variables,
             'result': result
         })
 

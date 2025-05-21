@@ -25,7 +25,7 @@ function App() {
 
       const result = await response.json();
       if (result.error) {
-        setOutput("❌ Błąd: " + result.error);
+        setOutput("Błąd: " + result.error);
       } else {
         // setOutput("✅ " + result.output + "\n\n" + JSON.stringify(result.variables, null, 2) + "\n\n" + result.result);
         setOutput(result.output + "\n\n" + result.result);

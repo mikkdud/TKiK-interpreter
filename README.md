@@ -77,7 +77,7 @@ FUNCTION  : 'FUNKCYJO' ;
 RETURN    : 'NAZOT' ;
 FOR       : 'DLA' ;
 WHILE     : 'PÓKI' ;
-REPEAT    : 'CIOMPLOJ' | 'cimploj' ;
+REPEAT    : 'CIOMPLOJ' | 'ciomploj' ;
 UNTIL     : 'AŻ' ;
 STEP      : 'CO' ;
 NEXT      : 'NEXT' | 'next' ;
@@ -136,11 +136,12 @@ TKiK-interpreter/
 
 ## Przykładowe drzewo parsowania
 ```
+GODKA funkcyjo, kero ôbliczo drugo moc liczby
 FUNKCYJO kwadrat(x)
     NAZOT x * x
 KONIEC
 
-ZMIYNNO wynik = kwadrat(4)
+GODEJ kwadrat(4)
 
 ZMIYNNO numery = [1, 2, 3]
 ZMIYNNO x = numery[1]
