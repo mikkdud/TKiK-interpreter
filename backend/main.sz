@@ -1,5 +1,3 @@
-
-
 GODKA funkcyjo, kero ôbliczo drugo moc liczby 
 FUNKCYJO kwadrat(x)
     NAZOT x * x
@@ -43,3 +41,11 @@ CIOMPLOJ
     i = i + 1
 AZ i >= 5
 
+ZMIYNNO licznik = 0
+
+POKI licznik < 5 POTYM
+    GODEJ licznik
+    licznik = licznik + 1
+KONIEC
+
+GODEJ "Koniec programu"

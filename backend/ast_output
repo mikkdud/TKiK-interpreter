@@ -1,109 +1,119 @@
 // AST
 digraph {
-	0 [label="
-
-
-FUNKCYJOkwadrat(x)
-NAZOTx*x
-KONIEC
-
-FUNKCYJOprint_list(numery)
-DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
-NEXT
-KONIEC
-
-ZMIYNNOp=-1
-ZMIYNNOq=2
-
-
-JAKp<-5
-POTYM
-ZMIYNNOwynik=kwadrat(6)
-GODEJwynik
-INKSZYJAKp+4>2
-POTYM
-ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
-INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
-KONIEC
-
-ZMIYNNOnumery=[1,2,3]
-print_list(numery)
-
-
-ZMIYNNOi=0
-CIOMPLOJ
-JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
-KONIEC
-i=i+1
-AZi>=5
-
-<EOF>"]
-	1 [label="
-
-
-FUNKCYJOkwadrat(x)
-NAZOTx*x
-KONIEC
-
-FUNKCYJOprint_list(numery)
-DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
-NEXT
-KONIEC
-
-ZMIYNNOp=-1
-ZMIYNNOq=2
-
-
-JAKp<-5
-POTYM
-ZMIYNNOwynik=kwadrat(6)
-GODEJwynik
-INKSZYJAKp+4>2
-POTYM
-ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
-INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
-KONIEC
-
-ZMIYNNOnumery=[1,2,3]
-print_list(numery)
-
-
-ZMIYNNOi=0
-CIOMPLOJ
-JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
-KONIEC
-i=i+1
-AZi>=5
-
-"]
+	0 [label="
+FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC
+
+FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC
+
+ZMIYNNOp=-1
+ZMIYNNOq=2
+
+
+JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC
+
+ZMIYNNOnumery=[1,2,3]
+print_list(numery)
+
+
+ZMIYNNOi=0
+CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5
+
+ZMIYNNOlicznik=0
+
+POKIlicznik<5POTYM
+GODEJlicznik
+licznik=licznik+1
+KONIEC
+
+GODEJ\"Koniec programu\"<EOF>"]
+	1 [label="
+FUNKCYJOkwadrat(x)
+NAZOTx*x
+KONIEC
+
+FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
+KONIEC
+
+ZMIYNNOp=-1
+ZMIYNNOq=2
+
+
+JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
+KONIEC
+
+ZMIYNNOnumery=[1,2,3]
+print_list(numery)
+
+
+ZMIYNNOi=0
+CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
+AZi>=5
+
+ZMIYNNOlicznik=0
+
+POKIlicznik<5POTYM
+GODEJlicznik
+licznik=licznik+1
+KONIEC
+
+GODEJ\"Koniec programu\""]
 	0 -> 1
-	2 [label="FUNKCYJOkwadrat(x)
-NAZOTx*x
+	2 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
 KONIEC"]
 	1 -> 2
-	3 [label="FUNKCYJOkwadrat(x)
-NAZOTx*x
+	3 [label="FUNKCYJOkwadrat(x)
+NAZOTx*x
 KONIEC"]
 	2 -> 3
 	4 [label=x]
 	3 -> 4
-	5 [label="NAZOTx*x
+	5 [label="NAZOTx*x
 "]
 	3 -> 5
 	6 [label="NAZOTx*x"]
@@ -116,31 +126,31 @@ KONIEC"]
 	8 -> 9
 	10 [label=x]
 	8 -> 10
-	11 [label="FUNKCYJOprint_list(numery)
-DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
-NEXT
+	11 [label="FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
 KONIEC"]
 	1 -> 11
-	12 [label="FUNKCYJOprint_list(numery)
-DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
-NEXT
+	12 [label="FUNKCYJOprint_list(numery)
+DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
 KONIEC"]
 	11 -> 12
 	13 [label=numery]
 	12 -> 13
-	14 [label="DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
-NEXT
+	14 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
+NEXT
 "]
 	12 -> 14
-	15 [label="DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
+	15 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
 NEXT"]
 	14 -> 15
-	16 [label="DLAi=LEN(numery)-1DO0CO-1
-GODEJnumery[i]
+	16 [label="DLAi=LEN(numery)-1DO0CO-1
+GODEJnumery[i]
 NEXT"]
 	15 -> 16
 	17 [label=i]
@@ -169,7 +179,7 @@ NEXT"]
 	27 -> 28
 	29 [label=1]
 	28 -> 29
-	30 [label="GODEJnumery[i]
+	30 [label="GODEJnumery[i]
 "]
 	16 -> 30
 	31 [label="GODEJnumery[i]"]
@@ -204,30 +214,30 @@ NEXT"]
 	43 -> 45
 	46 [label=2]
 	45 -> 46
-	47 [label="JAKp<-5
-POTYM
-ZMIYNNOwynik=kwadrat(6)
-GODEJwynik
-INKSZYJAKp+4>2
-POTYM
-ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
-INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
+	47 [label="JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
 KONIEC"]
 	1 -> 47
-	48 [label="JAKp<-5
-POTYM
-ZMIYNNOwynik=kwadrat(6)
-GODEJwynik
-INKSZYJAKp+4>2
-POTYM
-ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
-INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
+	48 [label="JAKp<-5
+POTYM
+ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
+INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
+INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
 KONIEC"]
 	47 -> 48
 	49 [label="p<-5"]
@@ -240,8 +250,8 @@ KONIEC"]
 	51 -> 52
 	53 [label=5]
 	52 -> 53
-	54 [label="ZMIYNNOwynik=kwadrat(6)
-GODEJwynik
+	54 [label="ZMIYNNOwynik=kwadrat(6)
+GODEJwynik
 "]
 	48 -> 54
 	55 [label="ZMIYNNOwynik=kwadrat(6)"]
@@ -266,10 +276,10 @@ GODEJwynik
 	63 -> 64
 	65 [label=wynik]
 	64 -> 65
-	66 [label="INKSZYJAKp+4>2
-POTYM
-ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
+	66 [label="INKSZYJAKp+4>2
+POTYM
+ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
 "]
 	48 -> 66
 	67 [label="p+4>2"]
@@ -286,8 +296,8 @@ GODEJwynik
 	67 -> 72
 	73 [label=2]
 	72 -> 73
-	74 [label="ZMIYNNOwynik=kwadrat(-2)
-GODEJwynik
+	74 [label="ZMIYNNOwynik=kwadrat(-2)
+GODEJwynik
 "]
 	66 -> 74
 	75 [label="ZMIYNNOwynik=kwadrat(-2)"]
@@ -314,13 +324,13 @@ GODEJwynik
 	84 -> 85
 	86 [label=wynik]
 	85 -> 86
-	87 [label="INKSZY
-ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
+	87 [label="INKSZY
+ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
 "]
 	48 -> 87
-	88 [label="ZMIYNNOwynik=kwadrat(3)
-GODEJwynik
+	88 [label="ZMIYNNOwynik=kwadrat(3)
+GODEJwynik
 "]
 	87 -> 88
 	89 [label="ZMIYNNOwynik=kwadrat(3)"]
@@ -385,47 +395,47 @@ GODEJwynik
 	116 -> 118
 	119 [label=0]
 	118 -> 119
-	120 [label="CIOMPLOJ
-JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
-KONIEC
-i=i+1
+	120 [label="CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
 AZi>=5"]
 	1 -> 120
-	121 [label="CIOMPLOJ
-JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
-KONIEC
-i=i+1
+	121 [label="CIOMPLOJ
+JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
 AZi>=5"]
 	120 -> 121
-	122 [label="JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
-KONIEC
-i=i+1
+	122 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
+KONIEC
+i=i+1
 "]
 	121 -> 122
-	123 [label="JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
+	123 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
 KONIEC"]
 	122 -> 123
-	124 [label="JAKi<>3
-POTYM
-GODEJi
-INKSZY
-CIS
+	124 [label="JAKi<>3
+POTYM
+GODEJi
+INKSZY
+CIS
 KONIEC"]
 	123 -> 124
 	125 [label="i<>3"]
@@ -436,8 +446,8 @@ KONIEC"]
 	125 -> 127
 	128 [label=3]
 	127 -> 128
-	129 [label="GODEJi
-"]
+	129 [label=GODEJi
+]
 	124 -> 129
 	130 [label=GODEJi]
 	129 -> 130
@@ -445,12 +455,12 @@ KONIEC"]
 	130 -> 131
 	132 [label=i]
 	131 -> 132
-	133 [label="INKSZY
-CIS
+	133 [label="INKSZY
+CIS
 "]
 	124 -> 133
-	134 [label="CIS
-"]
+	134 [label=CIS
+]
 	133 -> 134
 	135 [label=CIS]
 	134 -> 135
@@ -478,4 +488,64 @@ CIS
 	144 -> 146
 	147 [label=5]
 	146 -> 147
+	148 [label="ZMIYNNOlicznik=0"]
+	1 -> 148
+	149 [label="ZMIYNNOlicznik=0"]
+	148 -> 149
+	150 [label=licznik]
+	149 -> 150
+	151 [label=0]
+	149 -> 151
+	152 [label=0]
+	151 -> 152
+	153 [label="POKIlicznik<5POTYM
+GODEJlicznik
+licznik=licznik+1
+KONIEC"]
+	1 -> 153
+	154 [label="POKIlicznik<5POTYM
+GODEJlicznik
+licznik=licznik+1
+KONIEC"]
+	153 -> 154
+	155 [label="licznik<5"]
+	154 -> 155
+	156 [label=licznik]
+	155 -> 156
+	157 [label=5]
+	155 -> 157
+	158 [label=5]
+	157 -> 158
+	159 [label="GODEJlicznik
+licznik=licznik+1
+"]
+	154 -> 159
+	160 [label=GODEJlicznik]
+	159 -> 160
+	161 [label=GODEJlicznik]
+	160 -> 161
+	162 [label=licznik]
+	161 -> 162
+	163 [label="licznik=licznik+1"]
+	159 -> 163
+	164 [label="licznik=licznik+1"]
+	163 -> 164
+	165 [label=licznik]
+	164 -> 165
+	166 [label="licznik+1"]
+	164 -> 166
+	167 [label=licznik]
+	166 -> 167
+	168 [label=1]
+	166 -> 168
+	169 [label=1]
+	168 -> 169
+	170 [label="GODEJ\"Koniec programu\""]
+	1 -> 170
+	171 [label="GODEJ\"Koniec programu\""]
+	170 -> 171
+	172 [label="\"Koniec programu\""]
+	171 -> 172
+	173 [label="\"Koniec programu\""]
+	172 -> 173
 }
