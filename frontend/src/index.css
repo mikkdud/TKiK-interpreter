@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ace_keyword.ace_control {
+  color: #24afd1 !important;  
+}
+
+.ace_keyword {
+  color: #a852ca !important;  
+}
+
+.ace_constant {
+  color: #ffa500 !important;  }
+
+.ace_comment {
+  color: #888888 !important;  
+}
+
+.ace_identifier {
+  color: #ffffff !important;  
+}

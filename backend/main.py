@@ -2,7 +2,7 @@ from antlr4 import *
 from gen.Szprajch.SzprajchLexer import SzprajchLexer
 from gen.Szprajch.SzprajchParser import SzprajchParser
 from gen.Szprajch.SzprajchVisitor import SzprajchVisitor
-from SzprajchExecutor import SzprajchExecutor  # ⬅ dodano
+from SzprajchExecutor import SzprajchExecutor  
 
 from graphviz import Digraph
 
@@ -39,7 +39,7 @@ tree = parser.program()
 # 1. Pokaż drzewo składniowe
 print("Drzewo składniowe:")
 print(tree.toStringTree(recog=parser))
-visualize_tree(tree, parser)
+# visualize_tree(tree, parser)
 
 # 2. Uruchom interpreter
 print("\n--- Wykonywanie programu ---")

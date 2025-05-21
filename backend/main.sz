@@ -11,6 +11,11 @@ FUNKCYJO kwadrat(x)
     NAZOT x * x
 KONIEC
 
+lista[1] = 999
+
+GODEJ lista[0]
+GODEJ lista[1]
+GODEJ lista[2]
 FUNKCYJO print_list(numery)
     DLA i = LEN(numery) - 1 DO 0 CO -1
         GODEJ numery[i]
