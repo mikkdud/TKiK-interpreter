@@ -46,8 +46,8 @@ print("\n--- Wykonywanie programu ---")
 executor = SzprajchExecutor()
 executor.visit(tree)
 
-# 3. Wyświetl końcowy stan zmiennych
-print("\n--- Zmienne po wykonaniu ---")
-for var, val in executor.variables.items():
-    print(f"{var} = {val}")
+# # 3. Wyświetl końcowy stan zmiennych
+# print("\n--- Zmienne po wykonaniu ---")
+# for var, val in executor.variables.items():
+#     print(f"{var} = {val}")
  

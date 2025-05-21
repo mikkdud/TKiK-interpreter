@@ -16,6 +16,7 @@ statement
     | repeatstmt
     | continuestmt   
     | breakstmt 
+    | returnstmnt
     | functiondef
     | functioncall
     | COMMENT;
