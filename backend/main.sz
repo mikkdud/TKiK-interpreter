@@ -1,4 +1,10 @@
+ZMIYNNO lista = [10, 20, 30]
 
+lista[1] = 999
+
+GODEJ lista[0]
+GODEJ lista[1]
+GODEJ lista[2]
 
 GODKA funkcyjo, kero ôbliczo drugo moc liczby 
 FUNKCYJO kwadrat(x)

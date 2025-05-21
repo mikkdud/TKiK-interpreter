@@ -1,4 +1,4 @@
-# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
+# Generated from Szprajch/SzprajchExpr.g4 by ANTLR 4.13.1
 from antlr4 import *
 from io import StringIO
 import sys
@@ -145,7 +145,7 @@ def serializedATN():
         201,281,287,300,311,325,334,340,346,348,354,362,369,1,6,0,0
     ]
 
-class SzprajchLexer(Lexer):
+class SzprajchExprLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -230,7 +230,7 @@ class SzprajchLexer(Lexer):
                   "ID", "NUMBER", "STRINGLITERAL", "DOLLAR", "NEWLINE", 
                   "WS" ]
 
-    grammarFileName = "Szprajch.g4"
+    grammarFileName = "SzprajchExpr.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

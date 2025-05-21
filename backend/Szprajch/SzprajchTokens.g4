@@ -49,7 +49,7 @@ END       : 'KONIEC';
 FUNCTION  : 'FUNKCYJO';
 RETURN    : 'NAZOT';
 FOR       : 'DLA' ;
-WHILE     : 'PÓKI' ;
+WHILE     : 'POKI' ;
 REPEAT    : 'CIOMPLOJ' | 'ciomploj' ;
 UNTIL     : 'AŻ' | 'AZ' ;
 STEP      : 'CO' ;

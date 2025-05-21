@@ -202,6 +202,15 @@ class SzprajchExecutor(SzprajchVisitor):
     def visitContinuestmt(self, ctx):
         return ContinueSignal()
 
+    def visitWhilestmt(self, ctx):
+        while self.visit(ctx.expression()):
+            for child in ctx.loop_block().children:
+                result = self.visit(child)
+                if isinstance(result, BreakSignal):
+                    return
+                if isinstance(result, ContinueSignal):
+                    break
+
 
 
 class ReturnException(Exception):

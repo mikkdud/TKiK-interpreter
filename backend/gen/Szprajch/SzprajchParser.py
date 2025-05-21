@@ -1,4 +1,4 @@
-# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.2
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -169,9 +169,9 @@ class SzprajchParser ( Parser ):
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "'ZMIYNNO'", "'GODKA'", "'JAK'", "'POTYM'", 
                      "'INKSZY'", "'KONIEC'", "'FUNKCYJO'", "'NAZOT'", "'DLA'", 
-                     "'P\\u0102\\u201CKI'", "<INVALID>", "<INVALID>", "'CO'", 
-                     "<INVALID>", "'DO'", "<INVALID>", "'STOPNIJ'", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "'$'" ]
+                     "'POKI'", "<INVALID>", "<INVALID>", "'CO'", "<INVALID>", 
+                     "'DO'", "<INVALID>", "'STOPNIJ'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "'$'" ]
 
     symbolicNames = [ "<INVALID>", "MUL", "DIV", "ADD", "SUB", "EXP", "MOD", 
                       "NEQ", "GTE", "LTE", "GT", "LT", "EQ", "AND", "OR", 
@@ -277,7 +277,7 @@ class SzprajchParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.13.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
