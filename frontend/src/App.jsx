@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/theme-monokai";
-import "ace-builds/src-noconflict/mode-python"; // brak trybu Szprajch, używamy python jako placeholder
+import ace from 'ace-builds/src-noconflict/ace';
+import './mode-szprajch';
+
 
 function App() {
   const [code, setCode] = useState('ZMIYNNO x = 2');
   const [output, setOutput] = useState('');
+
+  useEffect(() => {
+    const editor = ace.edit("szprajch-editor");
+    editor.session.setMode("ace/mode/szprajch");
+  }, []);
 
   const runCode = async () => {
     setOutput('⏳ Uruchamianie...');
@@ -20,7 +27,8 @@ function App() {
       if (result.error) {
         setOutput("❌ Błąd: " + result.error);
       } else {
-        setOutput("✅ " + result.output + "\n\n" + JSON.stringify(result.variables, null, 2) + "\n\n" + result.result);
+        // setOutput("✅ " + result.output + "\n\n" + JSON.stringify(result.variables, null, 2) + "\n\n" + result.result);
+        setOutput(result.output + "\n\n" + result.result);
       }
     } catch (err) {
       setOutput("❌ Błąd połączenia z backendem");
@@ -31,7 +39,7 @@ function App() {
     <div style={{ display: 'flex', height: '100vh' }}>
       <div style={{ width: '50%', padding: '10px' }}>
         <AceEditor
-          mode="python"
+          mode="szprajch" 
           theme="monokai"
           value={code}
           onChange={setCode}
