@@ -35,12 +35,21 @@ class SzprajchListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by SzprajchParser#assignmentstmt.
-    def enterAssignmentstmt(self, ctx:SzprajchParser.AssignmentstmtContext):
+    # Enter a parse tree produced by SzprajchParser#VarAssignment.
+    def enterVarAssignment(self, ctx:SzprajchParser.VarAssignmentContext):
         pass
 
-    # Exit a parse tree produced by SzprajchParser#assignmentstmt.
-    def exitAssignmentstmt(self, ctx:SzprajchParser.AssignmentstmtContext):
+    # Exit a parse tree produced by SzprajchParser#VarAssignment.
+    def exitVarAssignment(self, ctx:SzprajchParser.VarAssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by SzprajchParser#ListElementAssignment.
+    def enterListElementAssignment(self, ctx:SzprajchParser.ListElementAssignmentContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchParser#ListElementAssignment.
+    def exitListElementAssignment(self, ctx:SzprajchParser.ListElementAssignmentContext):
         pass
 
 
