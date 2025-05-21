@@ -22,7 +22,11 @@ statement
 
 block: (statement NEWLINE* | COMMENT | NEWLINE)* ;
 
-assignmentstmt: LET? varname EQ expression;
+assignmentstmt
+    : LET? varname EQ expression                              # VarAssignment
+    | varname LBRACKET expression RBRACKET EQ expression          # ListElementAssignment
+    ;
+
 
 varname: ID;
 

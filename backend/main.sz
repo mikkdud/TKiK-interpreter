@@ -11,40 +11,8 @@ FUNKCYJO kwadrat(x)
     NAZOT x * x
 KONIEC
 
-FUNKCYJO print_list(numery)
-    DLA i = LEN(numery) - 1 DO 0 CO -1
-        GODEJ numery[i]
-    NEXT
-KONIEC
+lista[1] = 999
 
-ZMIYNNO p = -1
-ZMIYNNO q = 2
-
-
-JAK p < -5
-POTYM
-    ZMIYNNO wynik = kwadrat(6)
-    GODEJ wynik
-INKSZY JAK p + 4 > 2
-POTYM
-    ZMIYNNO wynik = kwadrat(-2)
-    GODEJ wynik
-INKSZY
-    ZMIYNNO wynik = kwadrat(3)
-    GODEJ wynik
-KONIEC
-
-ZMIYNNO numery = [1, 2, 3]
-print_list(numery)
-
-
-ZMIYNNO i = 0
-CIOMPLOJ
-    JAK i <> 3
-    POTYM 
-        GODEJ i
-    INKSZY 
-        CIS
-    KONIEC
-    i = i + 1
-AZ i >= 5
+GODEJ lista[0]
+GODEJ lista[1]
+GODEJ lista[2]
