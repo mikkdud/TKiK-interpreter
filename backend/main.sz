@@ -1,3 +1,12 @@
+ZMIYNNO lista = [10, 20, 30]
+
+lista[1] = 999
+
+GODEJ lista[0]
+GODEJ lista[1]
+GODEJ lista[2]
+
+GODKA funkcyjo, kero ôbliczo drugo moc liczby 
 FUNKCYJO kwadrat(x)
     NAZOT x * x
 KONIEC
@@ -10,6 +19,7 @@ KONIEC
 
 ZMIYNNO p = -1
 ZMIYNNO q = 2
+
 
 JAK p < -5
 POTYM
@@ -28,3 +38,13 @@ ZMIYNNO numery = [1, 2, 3]
 print_list(numery)
 
 
+ZMIYNNO i = 0
+CIOMPLOJ
+    JAK i <> 3
+    POTYM 
+        GODEJ i
+    INKSZY 
+        CIS
+    KONIEC
+    i = i + 1
+AZ i >= 5

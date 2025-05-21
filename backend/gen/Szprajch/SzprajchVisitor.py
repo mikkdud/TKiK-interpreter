@@ -1,4 +1,4 @@
-# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.2
+# Generated from Szprajch/Szprajch.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .SzprajchParser import SzprajchParser
@@ -24,8 +24,13 @@ class SzprajchVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SzprajchParser#assignmentstmt.
-    def visitAssignmentstmt(self, ctx:SzprajchParser.AssignmentstmtContext):
+    # Visit a parse tree produced by SzprajchParser#VarAssignment.
+    def visitVarAssignment(self, ctx:SzprajchParser.VarAssignmentContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SzprajchParser#ListElementAssignment.
+    def visitListElementAssignment(self, ctx:SzprajchParser.ListElementAssignmentContext):
         return self.visitChildren(ctx)
 
 

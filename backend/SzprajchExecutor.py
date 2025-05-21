@@ -12,11 +12,31 @@ class SzprajchExecutor(SzprajchVisitor):
         for child in ctx.children:
             self.visit(child)
 
-    def visitAssignmentstmt(self, ctx):
+    def visitVarAssignment(self, ctx):
         varname = ctx.varname().getText()
         value = self.visit(ctx.expression())
         self.variables[varname] = value
         return value
+
+    
+    def visitListElementAssignment(self, ctx):
+        list_name = ctx.varname().getText()
+        index = self.visit(ctx.expression(0))
+        value = self.visit(ctx.expression(1))
+
+        if list_name not in self.variables:
+            raise NameError(f"Zmienna '{list_name}' nie istnieje")
+
+        list_obj = self.variables[list_name]
+        if not isinstance(list_obj, list):
+            raise TypeError(f"Zmienna '{list_name}' nie jest listą")
+
+        if not (0 <= index < len(list_obj)):
+            raise IndexError(f"Indeks {index} poza zakresem listy '{list_name}'")
+
+        list_obj[index] = value
+        return value
+
 
     def visitNumberExpr(self, ctx):
         try:
@@ -179,12 +199,45 @@ class SzprajchExecutor(SzprajchVisitor):
             raise TypeError("Funkcja LEN oczekuje listy jako argumentu")
         return len(list_obj)
 
+    def visitRepeatstmt(self, ctx:SzprajchParser.RepeatstmtContext):
+        while True:
+            # Wykonaj blok pętli
+            for child in ctx.loop_block().children:
+                result = self.visit(child)
 
-    
+                # Obsługa break/continue
+                if isinstance(result, BreakSignal):
+                    return  # wyjście z pętli
+                if isinstance(result, ContinueSignal):
+                    break  # przejście do następnej iteracji
+
+            # Sprawdź warunek zakończenia pętli
+            condition = self.visit(ctx.expression())
+            if condition:
+                break
+
+    def visitBreakstmt(self, ctx):
+        return BreakSignal()
+
+    def visitContinuestmt(self, ctx):
+        return ContinueSignal()
+
+    def visitWhilestmt(self, ctx):
+        while self.visit(ctx.expression()):
+            for child in ctx.loop_block().children:
+                result = self.visit(child)
+                if isinstance(result, BreakSignal):
+                    return
+                if isinstance(result, ContinueSignal):
+                    break
+
 
 
 class ReturnException(Exception):
     def __init__(self, value):
         self.value = value
+
+class BreakSignal: pass
+class ContinueSignal: pass
 
 

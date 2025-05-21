@@ -13,15 +13,20 @@ statement
     | ifstmt
     | forstmt
     | whilestmt
+    | repeatstmt
+    | continuestmt   
+    | breakstmt 
     | functiondef
     | functioncall
-    | repeatstmt 
     | COMMENT;
 
+block: (statement NEWLINE* | COMMENT | NEWLINE)* ;
 
-block: (statement (NEWLINE+ | EOF))*;
+assignmentstmt
+    : LET? varname EQ expression                              # VarAssignment
+    | varname LBRACKET expression RBRACKET EQ expression          # ListElementAssignment
+    ;
 
-assignmentstmt: LET? varname EQ expression;
 
 varname: ID;
 

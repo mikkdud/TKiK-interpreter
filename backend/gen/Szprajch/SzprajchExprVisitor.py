@@ -59,6 +59,11 @@ class SzprajchExprVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SzprajchExprParser#NegateExpr.
+    def visitNegateExpr(self, ctx:SzprajchExprParser.NegateExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SzprajchExprParser#MulDivExpr.
     def visitMulDivExpr(self, ctx:SzprajchExprParser.MulDivExprContext):
         return self.visitChildren(ctx)
@@ -89,6 +94,11 @@ class SzprajchExprVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SzprajchExprParser#FuncCallExpr.
+    def visitFuncCallExpr(self, ctx:SzprajchExprParser.FuncCallExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by SzprajchExprParser#func.
     def visitFunc(self, ctx:SzprajchExprParser.FuncContext):
         return self.visitChildren(ctx)
@@ -106,11 +116,6 @@ class SzprajchExprVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by SzprajchExprParser#number.
     def visitNumber(self, ctx:SzprajchExprParser.NumberContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by SzprajchExprParser#id.
-    def visitId(self, ctx:SzprajchExprParser.IdContext):
         return self.visitChildren(ctx)
 
 

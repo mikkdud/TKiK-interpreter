@@ -98,6 +98,15 @@ class SzprajchExprListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchExprParser#NegateExpr.
+    def enterNegateExpr(self, ctx:SzprajchExprParser.NegateExprContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchExprParser#NegateExpr.
+    def exitNegateExpr(self, ctx:SzprajchExprParser.NegateExprContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchExprParser#MulDivExpr.
     def enterMulDivExpr(self, ctx:SzprajchExprParser.MulDivExprContext):
         pass
@@ -152,6 +161,15 @@ class SzprajchExprListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SzprajchExprParser#FuncCallExpr.
+    def enterFuncCallExpr(self, ctx:SzprajchExprParser.FuncCallExprContext):
+        pass
+
+    # Exit a parse tree produced by SzprajchExprParser#FuncCallExpr.
+    def exitFuncCallExpr(self, ctx:SzprajchExprParser.FuncCallExprContext):
+        pass
+
+
     # Enter a parse tree produced by SzprajchExprParser#func.
     def enterFunc(self, ctx:SzprajchExprParser.FuncContext):
         pass
@@ -185,15 +203,6 @@ class SzprajchExprListener(ParseTreeListener):
 
     # Exit a parse tree produced by SzprajchExprParser#number.
     def exitNumber(self, ctx:SzprajchExprParser.NumberContext):
-        pass
-
-
-    # Enter a parse tree produced by SzprajchExprParser#id.
-    def enterId(self, ctx:SzprajchExprParser.IdContext):
-        pass
-
-    # Exit a parse tree produced by SzprajchExprParser#id.
-    def exitId(self, ctx:SzprajchExprParser.IdContext):
         pass
 
 
