@@ -12,8 +12,12 @@ code {
     monospace;
 }
 
-.ace_keyword {
+.ace_keyword.ace_control {
   color: #24afd1 !important;  
+}
+
+.ace_keyword {
+  color: #a852ca !important;  
 }
 
 .ace_constant {
