@@ -151,6 +151,89 @@ ZMIYNNO x = numery[1]
 
 ---
 
+## 🔧 Jak uruchomić projekt
+
+### ✅ Wymagania
+
+- Python 3.10+
+- [ANTLR 4](https://www.antlr.org)
+- pip + virtualenv (opcjonalnie)
+- [Node.js](https://nodejs.org/en/download) + npm (jeśli chcesz odpalić frontend)
+
+---
+
+### ⚙️ Backend (interpreter)
+
+1. **Przejdź do folderu `backend/`:**
+
+   ```bash
+   cd backend
+   ```
+
+2. **Zainstaluj zależności:**
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate        # Linux/Mac
+   .venv\Scripts\activate           # Windows
+
+   pip install -r requirements.txt  
+   ```
+
+3. **Wygeneruj parser z gramatyki (jeśli nie ma folderu `gen/`):**
+
+   ```bash
+   antlr4 -Dlanguage=Python3 Szprajch/Szprajch.g4 Szprajch/SzprajchExpr.g4 Szprajch/SzprajchTokens.g4 -visitor -o gen/Szprajch
+   ```
+
+4. **Uruchom interpreter:**
+   Możesz uruchomić interpreter na dwa sposoby:
+
+   - **Bezpośrednie uruchomienie programu z pliku `main.sz`:**
+
+     ```bash
+     python main.py
+     ```
+
+     Interpreter wczyta i wykona program zapisany w `main.sz`, a wynik zostanie wyświetlony w terminalu.
+
+   - **Uruchomienie serwera Flask z edytorem:**
+
+     ```bash
+     python app.py
+     ```
+
+     Umożliwia korzystanie z graficznego edytora programu w przeglądarce. Aplikacja będzie dostępna pod adresem:
+
+     ```
+     http://localhost:5000
+     ```
+---
+
+### 🖥️ Frontend (jeśli dotyczy)
+
+1. **Przejdź do folderu `frontend/`:**
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Zainstaluj zależności:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Uruchom serwer developerski:**
+
+   ```bash
+   npm start
+   ```
+
+   Aplikacja frontendowa będzie dostępna pod `http://localhost:3000`.
+
+
+---
 ## 🔧 Instalacja [ANTLR](https://www.youtube.com/watch?v=dQw4w9WgXcQ) (dla języka Szprajch)
 
 Instrukcja konfiguracji ANTLR-a w systemach Linux i Windows.
