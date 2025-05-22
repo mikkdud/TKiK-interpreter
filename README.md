@@ -161,7 +161,14 @@ ZMIYNNO x = numery[1]
 - [Node.js](https://nodejs.org/en/download) + npm (jeśli chcesz odpalić frontend)
 
 ---
+### 🔽 Klonowanie repozytorium
 
+Aby uruchomić projekt lokalnie, sklonuj repozytorium:
+
+```bash
+git clone https://github.com/mikkdud/TKiK-interpreter.git
+cd TKiK-interpreter
+---
 ### ⚙️ Backend (interpreter)
 
 1. **Przejdź do folderu `backend/`:**
