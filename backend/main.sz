@@ -24,7 +24,7 @@ FUNKCYJO czy_palindrom(lista)
     NAZOT 1
 KONIEC
 
-GODKA funkcyjo, kero szuko piyrszy dzielnik liczby > 1 (prócz 1)
+GODKA funkcyjo, kero zwraco piyrszom parzystom liczba z podanyj listy
 FUNKCYJO szukaj_pierwszej_parzystej(lista)
     ZMIYNNO i = 0
     POKI 1
@@ -39,13 +39,21 @@ FUNKCYJO szukaj_pierwszej_parzystej(lista)
 KONIEC
 
 
-ZMIYNNO wynik = silnia(5)
-GODEJ "5! = " + wynik
+ZMIYNNO wynik = silnia(6)
+GODEJ "6! = " + wynik
 
-ZMIYNNO lista_test = ["ala", "kot", "ala"]
+ZMIYNNO lista_test = ["k", "a", "j", "a", "k"]
 ZMIYNNO wynik_palindrom = czy_palindrom(lista_test)
-GODEJ wynik_palindrom
+JAK wynik_palindrom POTYM
+    GODEJ "Lista " + lista_test + " jest palindromem."
+INKSZY
+    GODEJ "Lista " + lista_test + " nie jest palindromem."
+KONIEC
 
-ZMIYNNO lista_liczb = [1, 3, 5, 6, 7]
+ZMIYNNO lista_liczb = [1, 3, 5, 20, 7]
 ZMIYNNO wynik_parzysta = szukaj_pierwszej_parzystej(lista_liczb)
-GODEJ "Pierwsza parzysta liczba w liście: " + wynik_parzysta
+JAK wynik_parzysta <> -1 POTYM
+    GODEJ "Pierwsza parzysta liczba w liście "+ lista_liczb + " to: " + wynik_parzysta
+INKSZY
+    GODEJ "Brak liczb parzystych w liście "+ lista_liczb
+KONIEC
