@@ -74,6 +74,7 @@ loop_statement
     | repeatstmt
     | continuestmt
     | breakstmt
+    | functioncall
     | COMMENT;
 
 loop_block: (loop_statement NEWLINE+)*;
@@ -89,6 +90,7 @@ function_statement
     | returnstmnt
     | continuestmt
     | breakstmt
+    | functioncall
     | COMMENT;
 
-function_block: (function_statement NEWLINE+)*;
+function_block: ( (function_statement | functiondef) NEWLINE+ )* ;

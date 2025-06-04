@@ -2,7 +2,8 @@ from antlr4 import *
 from gen.Szprajch.SzprajchLexer import SzprajchLexer
 from gen.Szprajch.SzprajchParser import SzprajchParser
 from gen.Szprajch.SzprajchVisitor import SzprajchVisitor
-from SzprajchExecutor import SzprajchExecutor  
+from SzprajchExecutor import SzprajchExecutor 
+from SzprajchErrorListener import SzprajchErrorListener 
 
 from graphviz import Digraph
 
@@ -31,8 +32,13 @@ def visualize_tree(tree, parser):
 
 input_text = FileStream("main.sz", encoding="utf-8")
 lexer = SzprajchLexer(input_text)
+lexer.removeErrorListeners()
+lexer.addErrorListener(SzprajchErrorListener())
+
 stream = CommonTokenStream(lexer)
 parser = SzprajchParser(stream)
+parser.removeErrorListeners()
+parser.addErrorListener(SzprajchErrorListener())
 
 tree = parser.program()
 
