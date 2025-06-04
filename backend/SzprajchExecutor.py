@@ -273,6 +273,23 @@ class SzprajchExecutor(SzprajchVisitor):
         base = self.visit(ctx.expression(0))
         exponent = self.visit(ctx.expression(1))
         return base ** exponent
+    
+    def visitValfunc(self, ctx):
+        # Funkcja VAL - konwersja stringa na liczbę
+        val = self.visit(ctx.expression())
+        try:
+            # Jeśli zawiera kropkę, traktuj jako float
+            return int(val) if '.' not in str(val) else float(val)
+        except (ValueError, TypeError):
+            return float('nan')  # zwraca NaN, jeśli nie można sparsować
+
+    def visitIsnanfunc(self, ctx):
+        val = self.visit(ctx.expression())
+        try:
+            return isinstance(val, float) and val != val  # tylko NaN jest różne od siebie
+        except:
+            return False
+
 
 
 # Pomocnicze klasy

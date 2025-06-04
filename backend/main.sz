@@ -57,3 +57,24 @@ JAK wynik_parzysta <> -1 POTYM
 INKSZY
     GODEJ "Brak liczb parzystych w liście "+ lista_liczb
 KONIEC
+
+ZMIYNNO litery = ["K", "a", "j", "ś"]
+ZMIYNNO dlugosc = LEN(litery)
+GODEJ dlugosc  
+
+ZMIYNNO a = VAL("42")
+ZMIYNNO b = VAL("3.14")
+ZMIYNNO c = VAL("abc")  GODKA tego nie da się sparsować – powinno dać NaN
+
+GODEJ a  GODKA powinno wypisać: 42
+GODEJ b  GODKA powinno wypisać: 3.14
+GODEJ c  GODKA powinno wypisać: NaN albo coś podobnego
+
+ZMIYNNO x = VAL("abc")  GODKA zwróci NaN
+ZMIYNNO y = VAL("123")  GODKA zwróci 123
+
+ZMIYNNO test1 = ISNAN(x)
+ZMIYNNO test2 = ISNAN(y)
+
+GODEJ test1  GODKA powinno wypisać: TRUE (albo 1)
+GODEJ test2  GODKA powinno wypisać: FALSE (albo 0)
