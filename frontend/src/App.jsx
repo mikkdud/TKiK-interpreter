@@ -48,7 +48,24 @@ function App() {
           width="100%"
           height="90%"
         />
-        <button onClick={runCode}>Run</button>
+        <button
+          onClick={runCode}
+          style={{
+            marginTop: '10px',
+            padding: '10px 20px',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            transition: 'background 0.3s',
+          }}
+          onMouseOver={(e) => e.target.style.backgroundColor = '#45a049'}
+          onMouseOut={(e) => e.target.style.backgroundColor = '#4CAF50'}
+        >
+          Run Code
+        </button>
       </div>
       <div style={{ width: '50%', padding: '10px', background: '#eee' }}>
         <pre>{output}</pre>

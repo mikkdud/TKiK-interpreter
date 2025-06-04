@@ -22,6 +22,9 @@ class SzprajchExecutor(SzprajchVisitor):
         for child in ctx.children:
             self.visit(child)
 
+    def visitParenExpr(self, ctx):
+        return self.visit(ctx.expression())
+
     def visitVarAssignment(self, ctx):
         # Przypisanie wartości do zmiennej
         varname = ctx.varname().getText()
@@ -59,6 +62,7 @@ class SzprajchExecutor(SzprajchVisitor):
         right = self.visit(ctx.expression(1))
         operator = ctx.getChild(1).getText()
         
+        # print(f"AddSubExpr: {left} ({type(left)}), ({str(left)}), {operator}, {right} ({type(right)}) ({str(right)})")
         if operator == '+':
         # Obsługa konkatenacji stringów
             if isinstance(left, str) or isinstance(right, str):
@@ -67,7 +71,7 @@ class SzprajchExecutor(SzprajchVisitor):
         elif operator == '-':
             return left - right
         else:
-            raise ValueError(f"Nieobsługiwany operator: {operator}")
+            raise ValueError(f"Nieobsługiwany operator: {operator}. Linia: {ctx.start.line}")
 
     def visitMulDivExpr(self, ctx):
         # Obsługa mnożenia i dzielenia całkowitego

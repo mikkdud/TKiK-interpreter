@@ -6,7 +6,7 @@ const SzprajchHighlightRules = function () {
     start: [
       { token: "comment.line", regex: "GODKA.*$" },
       { token: "keyword.control", regex: "\\b(?:JAK|POTYM|INKSZY|KONIEC|FUNKCYJO|NAZOT)\\b" },
-      { token: "keyword", regex: "\\b(?:GODEJ|wkludz|ZMIYNNO|GODKA|DLA|PÓKI|CIOMPLOJ|AŻ|AZ|CO|NEXT|CIŚ|CIS|STOPNIJ)\\b" },
+      { token: "keyword", regex: "\\b(?:GODEJ|wkludz|ZMIYNNO|GODKA|DLA|PÓKI|CIOMPLOJ|AŻ|AZ|CO|NEXT|CIŚ|CIS|STOPNIJ|VAL|LEN|ISNAN)\\b" },
       { token: "constant.numeric", regex: "\\b\\d+(?:\\.\\d+)?\\b" },
       { token: "string", regex: '".*?"' },
       { token: "keyword.operator", regex: "\\+|\\-|\\*|\\/|\\^|=|<>|>=|<=|>|<|MOD|I|ALBO|NIY" },
