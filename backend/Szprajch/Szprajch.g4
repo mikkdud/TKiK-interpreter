@@ -90,6 +90,7 @@ function_statement
     | returnstmnt
     | continuestmt
     | breakstmt
+    | functiondef
     | functioncall
     | COMMENT;
 

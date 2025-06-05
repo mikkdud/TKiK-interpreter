@@ -163,6 +163,8 @@ class SzprajchExecutor(SzprajchVisitor):
     def visitLogicalAndExpr(self, ctx):
         # Operator logiczny AND
         left = self.visit(ctx.expression(0))
+        print(ctx.expression(0))
+        print(ctx.expression(1))
         right = self.visit(ctx.expression(1))
         return int(bool(left) and bool(right))
 
@@ -172,13 +174,40 @@ class SzprajchExecutor(SzprajchVisitor):
 
     def visitFunctiondef(self, ctx):
         # Definicja funkcji użytkownika
-        func_name = ctx.ID().getText()
-        params = [token.getText() for token in ctx.paramlist().getTokens(SzprajchParser.ID)]
+        func_name = ctx.ID().getText()  
+        print(func_name)
+        params = [token.getText() for token in ctx.paramlist().getTokens(SzprajchParser.ID)] if ctx.paramlist() else []
         block = ctx.function_block()
         self.functions[func_name] = (params, block)
 
+    # def visitFunctioncall(self, ctx):
+    # # Wywołanie funkcji użytkownika
+    #     name = ctx.ID().getText()
+    #     args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
+
+    #     if name not in self.functions:
+    #         raise NameError(f"Nie znaleziono funkcji '{name}'. Linia {ctx.start.line}")
+
+    #     params, block = self.functions[name]
+    #     if len(params) != len(args):
+    #         raise TypeError(f"Funkcja '{name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}. Linia: {ctx.start.line}")
+
+    #     # Nowy zakres zmiennych
+    #     self.variable_stack.append(dict(zip(params, args)))
+
+    #     try:
+    #         for stmt in block.function_statement():
+    #             self.visit(stmt)
+    #         # Jeśli nie było return, to None
+    #         result = None
+    #     except ReturnValue as rv:
+    #         result = rv.value
+    #     finally:
+    #         self.variable_stack.pop()
+
+    #     return result
+    
     def visitFunctioncall(self, ctx):
-    # Wywołanie funkcji użytkownika
         name = ctx.ID().getText()
         args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
 
@@ -189,13 +218,12 @@ class SzprajchExecutor(SzprajchVisitor):
         if len(params) != len(args):
             raise TypeError(f"Funkcja '{name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}. Linia: {ctx.start.line}")
 
-        # Nowy zakres zmiennych
+        # Tworzymy nowy zakres zmiennych dla funkcji
         self.variable_stack.append(dict(zip(params, args)))
 
         try:
             for stmt in block.function_statement():
                 self.visit(stmt)
-            # Jeśli nie było return, to None
             result = None
         except ReturnValue as rv:
             result = rv.value
@@ -203,6 +231,7 @@ class SzprajchExecutor(SzprajchVisitor):
             self.variable_stack.pop()
 
         return result
+
 
 
     def visitReturnstmnt(self, ctx):
@@ -226,10 +255,10 @@ class SzprajchExecutor(SzprajchVisitor):
 
     def visitLenfunc(self, ctx):
         # Funkcja LEN - długość listy
-        list_obj = self.visit(ctx.expression())
-        if not isinstance(list_obj, list):
-            raise TypeError(f"Funkcja LEN oczekuje listy jako argumentu. Linia: {ctx.start.line}")
-        return len(list_obj)
+        obj = self.visit(ctx.expression())
+        if not isinstance(obj, list) and not isinstance(obj, str):
+            raise TypeError(f"Funkcja LEN oczekuje listy lub stringa jako argumentu. Linia: {ctx.start.line}")
+        return len(obj)
 
     def visitRepeatstmt(self, ctx):
         # Pętla repeat-until
