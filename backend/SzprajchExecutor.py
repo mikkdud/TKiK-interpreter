@@ -8,11 +8,11 @@ class SzprajchExecutor(SzprajchVisitor):
         self.variable_stack = [{}]  # stos słowników zmiennych
         self.functions = {}         # Słownik na funkcje użytkownika
 
-    def get_variable(self, name):
+    def get_variable(self, name, ctx):
         for scope in reversed(self.variable_stack):
             if name in scope:
                 return scope[name]
-        raise NameError(f"Zmienna '{name}' nie została zadeklarowana")
+        raise NameError(f"Zmienna '{name}' nie została zadeklarowana. Linia {ctx.start.line}")
 
     def set_variable(self, name, value):
         self.variable_stack[-1][name] = value
@@ -37,10 +37,10 @@ class SzprajchExecutor(SzprajchVisitor):
         list_name = ctx.varname().getText()
         index = self.visit(ctx.expression(0))
         value = self.visit(ctx.expression(1))
-        list_obj = self.get_variable(list_name)
+        list_obj = self.get_variable(list_name, ctx)
 
         if not isinstance(list_obj, list):
-            raise TypeError(f"Zmienna '{list_name}' nie jest listą")
+            raise TypeError(f"Zmienna '{list_name}' nie jest listą. Linia: {ctx.start.line}")
 
         if not (0 <= index < len(list_obj)):
             raise IndexError(f"Indeks {index} poza zakresem listy '{list_name}'")
@@ -54,7 +54,7 @@ class SzprajchExecutor(SzprajchVisitor):
 
     def visitIdExpr(self, ctx):
         # Zwraca wartość zmiennej
-        return self.get_variable(ctx.getText())
+        return self.get_variable(ctx.getText(), ctx)
 
     def visitAddSubExpr(self, ctx):
         # Obsługa dodawania i odejmowania
@@ -83,7 +83,7 @@ class SzprajchExecutor(SzprajchVisitor):
             return left * right
         elif operator == '/':
             if right == 0:
-                raise ZeroDivisionError("Dzielenie przez zero")
+                raise ZeroDivisionError(f"Dzielenie przez zero. Linia {ctx.start.line}")
             return left // right
         elif operator == 'MOD':
             return left % right
@@ -151,9 +151,9 @@ class SzprajchExecutor(SzprajchVisitor):
         step = self.visit(ctx.expression(2)) if ctx.expression(2) else 1
 
         self.set_variable(varname, start)
-        while (step > 0 and self.get_variable(varname) <= end) or (step < 0 and self.get_variable(varname) >= end):
+        while (step > 0 and self.get_variable(varname, ctx) <= end) or (step < 0 and self.get_variable(varname, ctx) >= end):
             self.visit(ctx.loop_block())
-            self.set_variable(varname, self.get_variable(varname) + step)
+            self.set_variable(varname, self.get_variable(varname, ctx) + step)
 
     def visitNotExpr(self, ctx):
         # Negacja logiczna
@@ -183,11 +183,11 @@ class SzprajchExecutor(SzprajchVisitor):
         args = [self.visit(arg) for arg in ctx.arglist().expression()] if ctx.arglist() else []
 
         if name not in self.functions:
-            raise NameError(f"Nie znaleziono funkcji '{name}'")
+            raise NameError(f"Nie znaleziono funkcji '{name}'. Linia {ctx.start.line}")
 
         params, block = self.functions[name]
         if len(params) != len(args):
-            raise TypeError(f"Funkcja '{name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}")
+            raise TypeError(f"Funkcja '{name}' oczekuje {len(params)} argumentów, a otrzymano {len(args)}. Linia: {ctx.start.line}")
 
         # Nowy zakres zmiennych
         self.variable_stack.append(dict(zip(params, args)))
@@ -228,7 +228,7 @@ class SzprajchExecutor(SzprajchVisitor):
         # Funkcja LEN - długość listy
         list_obj = self.visit(ctx.expression())
         if not isinstance(list_obj, list):
-            raise TypeError("Funkcja LEN oczekuje listy jako argumentu")
+            raise TypeError(f"Funkcja LEN oczekuje listy jako argumentu. Linia: {ctx.start.line}")
         return len(list_obj)
 
     def visitRepeatstmt(self, ctx):

@@ -1,0 +1,22 @@
+GODKA funkcyjo, kero zmiyni liczba na binarno jako string
+FUNKCYJO na_binarny(n)
+    JAK n = 0 POTYM
+        NAZOT "0"
+    KONIEC
+
+    ZMIYNNO bin_str = ""
+
+    POKI n > 0
+        bin_str = VAL(n MOD 2) + bin_str
+        n = VAL(n / 2)
+    KONIEC
+
+    NAZOT bin_str
+KONIEC
+
+
+GODEJ "5 (10) = " + na_binarny(5) + " (2)"
+GODEJ "213 (10) = " + na_binarny(213) + " (2)"
+GODEJ "987 (10) = " + na_binarny(987) + " (2)"
+GODEJ "2102 (10) = " + na_binarny(1021) + " (2)"
+GODEJ "345678 (10) = " + na_binarny(345678) + " (2)"
