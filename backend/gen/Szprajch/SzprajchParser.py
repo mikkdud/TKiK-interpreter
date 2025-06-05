@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,49,396,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,49,397,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
@@ -32,33 +32,33 @@ def serializedATN():
         10,16,12,16,242,9,16,1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,18,1,18,
         1,18,1,18,1,18,1,18,1,18,3,18,258,8,18,1,19,1,19,4,19,262,8,19,11,
         19,12,19,263,5,19,266,8,19,10,19,12,19,269,9,19,1,20,1,20,1,20,1,
-        20,1,20,1,20,1,20,1,20,1,20,1,20,1,20,1,20,3,20,283,8,20,1,21,1,
-        21,3,21,287,8,21,1,21,4,21,290,8,21,11,21,12,21,291,5,21,294,8,21,
-        10,21,12,21,297,9,21,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,
-        1,22,1,22,1,22,1,22,1,22,1,22,3,22,314,8,22,1,22,1,22,1,22,1,22,
+        20,1,20,1,20,1,20,1,20,1,20,1,20,1,20,1,20,1,20,3,20,284,8,20,1,
+        21,1,21,3,21,288,8,21,1,21,4,21,291,8,21,11,21,12,21,292,5,21,295,
+        8,21,10,21,12,21,298,9,21,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,
+        1,22,1,22,1,22,1,22,1,22,1,22,1,22,3,22,315,8,22,1,22,1,22,1,22,
         1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,
-        1,22,1,22,1,22,1,22,1,22,1,22,5,22,339,8,22,10,22,12,22,342,9,22,
-        1,23,1,23,1,23,3,23,347,8,23,1,24,1,24,1,24,1,24,5,24,353,8,24,10,
-        24,12,24,356,9,24,3,24,358,8,24,1,24,1,24,1,25,1,25,1,26,1,26,1,
-        27,1,27,1,27,3,27,369,8,27,1,27,1,27,1,28,1,28,1,28,5,28,376,8,28,
-        10,28,12,28,379,9,28,1,29,1,29,1,29,1,29,1,29,1,30,1,30,1,30,1,30,
-        1,30,1,31,1,31,1,31,1,31,1,31,1,31,0,1,44,32,0,2,4,6,8,10,12,14,
-        16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
-        60,62,0,3,2,0,1,2,6,6,1,0,3,4,1,0,7,12,443,0,64,1,0,0,0,2,80,1,0,
-        0,0,4,93,1,0,0,0,6,110,1,0,0,0,8,112,1,0,0,0,10,114,1,0,0,0,12,117,
-        1,0,0,0,14,121,1,0,0,0,16,147,1,0,0,0,18,164,1,0,0,0,20,172,1,0,
-        0,0,22,190,1,0,0,0,24,200,1,0,0,0,26,216,1,0,0,0,28,218,1,0,0,0,
-        30,220,1,0,0,0,32,235,1,0,0,0,34,243,1,0,0,0,36,257,1,0,0,0,38,267,
-        1,0,0,0,40,282,1,0,0,0,42,295,1,0,0,0,44,313,1,0,0,0,46,346,1,0,
-        0,0,48,348,1,0,0,0,50,361,1,0,0,0,52,363,1,0,0,0,54,365,1,0,0,0,
-        56,372,1,0,0,0,58,380,1,0,0,0,60,385,1,0,0,0,62,390,1,0,0,0,64,65,
-        3,4,2,0,65,66,5,0,0,1,66,1,1,0,0,0,67,81,3,6,3,0,68,81,3,10,5,0,
-        69,81,3,12,6,0,70,81,3,14,7,0,71,81,3,20,10,0,72,81,3,22,11,0,73,
-        81,3,24,12,0,74,81,3,26,13,0,75,81,3,28,14,0,76,81,3,34,17,0,77,
-        81,3,30,15,0,78,81,3,54,27,0,79,81,5,43,0,0,80,67,1,0,0,0,80,68,
-        1,0,0,0,80,69,1,0,0,0,80,70,1,0,0,0,80,71,1,0,0,0,80,72,1,0,0,0,
-        80,73,1,0,0,0,80,74,1,0,0,0,80,75,1,0,0,0,80,76,1,0,0,0,80,77,1,
-        0,0,0,80,78,1,0,0,0,80,79,1,0,0,0,81,3,1,0,0,0,82,86,3,2,1,0,83,
+        1,22,1,22,1,22,1,22,1,22,1,22,1,22,5,22,340,8,22,10,22,12,22,343,
+        9,22,1,23,1,23,1,23,3,23,348,8,23,1,24,1,24,1,24,1,24,5,24,354,8,
+        24,10,24,12,24,357,9,24,3,24,359,8,24,1,24,1,24,1,25,1,25,1,26,1,
+        26,1,27,1,27,1,27,3,27,370,8,27,1,27,1,27,1,28,1,28,1,28,5,28,377,
+        8,28,10,28,12,28,380,9,28,1,29,1,29,1,29,1,29,1,29,1,30,1,30,1,30,
+        1,30,1,30,1,31,1,31,1,31,1,31,1,31,1,31,0,1,44,32,0,2,4,6,8,10,12,
+        14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,
+        58,60,62,0,3,2,0,1,2,6,6,1,0,3,4,1,0,7,12,445,0,64,1,0,0,0,2,80,
+        1,0,0,0,4,93,1,0,0,0,6,110,1,0,0,0,8,112,1,0,0,0,10,114,1,0,0,0,
+        12,117,1,0,0,0,14,121,1,0,0,0,16,147,1,0,0,0,18,164,1,0,0,0,20,172,
+        1,0,0,0,22,190,1,0,0,0,24,200,1,0,0,0,26,216,1,0,0,0,28,218,1,0,
+        0,0,30,220,1,0,0,0,32,235,1,0,0,0,34,243,1,0,0,0,36,257,1,0,0,0,
+        38,267,1,0,0,0,40,283,1,0,0,0,42,296,1,0,0,0,44,314,1,0,0,0,46,347,
+        1,0,0,0,48,349,1,0,0,0,50,362,1,0,0,0,52,364,1,0,0,0,54,366,1,0,
+        0,0,56,373,1,0,0,0,58,381,1,0,0,0,60,386,1,0,0,0,62,391,1,0,0,0,
+        64,65,3,4,2,0,65,66,5,0,0,1,66,1,1,0,0,0,67,81,3,6,3,0,68,81,3,10,
+        5,0,69,81,3,12,6,0,70,81,3,14,7,0,71,81,3,20,10,0,72,81,3,22,11,
+        0,73,81,3,24,12,0,74,81,3,26,13,0,75,81,3,28,14,0,76,81,3,34,17,
+        0,77,81,3,30,15,0,78,81,3,54,27,0,79,81,5,43,0,0,80,67,1,0,0,0,80,
+        68,1,0,0,0,80,69,1,0,0,0,80,70,1,0,0,0,80,71,1,0,0,0,80,72,1,0,0,
+        0,80,73,1,0,0,0,80,74,1,0,0,0,80,75,1,0,0,0,80,76,1,0,0,0,80,77,
+        1,0,0,0,80,78,1,0,0,0,80,79,1,0,0,0,81,3,1,0,0,0,82,86,3,2,1,0,83,
         85,5,48,0,0,84,83,1,0,0,0,85,88,1,0,0,0,86,84,1,0,0,0,86,87,1,0,
         0,0,87,92,1,0,0,0,88,86,1,0,0,0,89,92,5,43,0,0,90,92,5,48,0,0,91,
         82,1,0,0,0,91,89,1,0,0,0,91,90,1,0,0,0,92,95,1,0,0,0,93,91,1,0,0,
@@ -113,50 +113,51 @@ def serializedATN():
         0,0,257,256,1,0,0,0,258,37,1,0,0,0,259,261,3,36,18,0,260,262,5,48,
         0,0,261,260,1,0,0,0,262,263,1,0,0,0,263,261,1,0,0,0,263,264,1,0,
         0,0,264,266,1,0,0,0,265,259,1,0,0,0,266,269,1,0,0,0,267,265,1,0,
-        0,0,267,268,1,0,0,0,268,39,1,0,0,0,269,267,1,0,0,0,270,283,3,6,3,
-        0,271,283,3,10,5,0,272,283,3,12,6,0,273,283,3,14,7,0,274,283,3,20,
-        10,0,275,283,3,22,11,0,276,283,3,24,12,0,277,283,3,34,17,0,278,283,
-        3,26,13,0,279,283,3,28,14,0,280,283,3,54,27,0,281,283,5,43,0,0,282,
-        270,1,0,0,0,282,271,1,0,0,0,282,272,1,0,0,0,282,273,1,0,0,0,282,
-        274,1,0,0,0,282,275,1,0,0,0,282,276,1,0,0,0,282,277,1,0,0,0,282,
-        278,1,0,0,0,282,279,1,0,0,0,282,280,1,0,0,0,282,281,1,0,0,0,283,
-        41,1,0,0,0,284,287,3,40,20,0,285,287,3,30,15,0,286,284,1,0,0,0,286,
-        285,1,0,0,0,287,289,1,0,0,0,288,290,5,48,0,0,289,288,1,0,0,0,290,
-        291,1,0,0,0,291,289,1,0,0,0,291,292,1,0,0,0,292,294,1,0,0,0,293,
-        286,1,0,0,0,294,297,1,0,0,0,295,293,1,0,0,0,295,296,1,0,0,0,296,
-        43,1,0,0,0,297,295,1,0,0,0,298,299,6,22,-1,0,299,314,3,50,25,0,300,
-        314,3,52,26,0,301,314,3,46,23,0,302,314,3,54,27,0,303,314,5,44,0,
-        0,304,305,5,17,0,0,305,306,3,44,22,0,306,307,5,18,0,0,307,314,1,
-        0,0,0,308,309,5,4,0,0,309,314,3,44,22,10,310,311,5,15,0,0,311,314,
-        3,44,22,6,312,314,3,48,24,0,313,298,1,0,0,0,313,300,1,0,0,0,313,
-        301,1,0,0,0,313,302,1,0,0,0,313,303,1,0,0,0,313,304,1,0,0,0,313,
-        308,1,0,0,0,313,310,1,0,0,0,313,312,1,0,0,0,314,340,1,0,0,0,315,
-        316,10,9,0,0,316,317,7,0,0,0,317,339,3,44,22,10,318,319,10,8,0,0,
-        319,320,7,1,0,0,320,339,3,44,22,9,321,322,10,7,0,0,322,323,7,2,0,
-        0,323,339,3,44,22,8,324,325,10,5,0,0,325,326,5,13,0,0,326,339,3,
-        44,22,6,327,328,10,4,0,0,328,329,5,14,0,0,329,339,3,44,22,5,330,
-        331,10,3,0,0,331,332,5,5,0,0,332,339,3,44,22,3,333,334,10,1,0,0,
-        334,335,5,19,0,0,335,336,3,44,22,0,336,337,5,20,0,0,337,339,1,0,
-        0,0,338,315,1,0,0,0,338,318,1,0,0,0,338,321,1,0,0,0,338,324,1,0,
-        0,0,338,327,1,0,0,0,338,330,1,0,0,0,338,333,1,0,0,0,339,342,1,0,
-        0,0,340,338,1,0,0,0,340,341,1,0,0,0,341,45,1,0,0,0,342,340,1,0,0,
-        0,343,347,3,58,29,0,344,347,3,60,30,0,345,347,3,62,31,0,346,343,
-        1,0,0,0,346,344,1,0,0,0,346,345,1,0,0,0,347,47,1,0,0,0,348,357,5,
-        19,0,0,349,354,3,44,22,0,350,351,5,16,0,0,351,353,3,44,22,0,352,
-        350,1,0,0,0,353,356,1,0,0,0,354,352,1,0,0,0,354,355,1,0,0,0,355,
-        358,1,0,0,0,356,354,1,0,0,0,357,349,1,0,0,0,357,358,1,0,0,0,358,
-        359,1,0,0,0,359,360,5,20,0,0,360,49,1,0,0,0,361,362,5,46,0,0,362,
-        51,1,0,0,0,363,364,5,45,0,0,364,53,1,0,0,0,365,366,5,44,0,0,366,
-        368,5,17,0,0,367,369,3,56,28,0,368,367,1,0,0,0,368,369,1,0,0,0,369,
-        370,1,0,0,0,370,371,5,18,0,0,371,55,1,0,0,0,372,377,3,44,22,0,373,
-        374,5,16,0,0,374,376,3,44,22,0,375,373,1,0,0,0,376,379,1,0,0,0,377,
-        375,1,0,0,0,377,378,1,0,0,0,378,57,1,0,0,0,379,377,1,0,0,0,380,381,
-        5,21,0,0,381,382,5,17,0,0,382,383,3,44,22,0,383,384,5,18,0,0,384,
-        59,1,0,0,0,385,386,5,22,0,0,386,387,5,17,0,0,387,388,3,44,22,0,388,
-        389,5,18,0,0,389,61,1,0,0,0,390,391,5,23,0,0,391,392,5,17,0,0,392,
-        393,3,44,22,0,393,394,5,18,0,0,394,63,1,0,0,0,36,80,86,91,93,97,
-        110,126,133,139,143,153,160,168,180,185,195,204,210,224,230,240,
-        257,263,267,282,286,291,295,313,338,340,346,354,357,368,377
+        0,0,267,268,1,0,0,0,268,39,1,0,0,0,269,267,1,0,0,0,270,284,3,6,3,
+        0,271,284,3,10,5,0,272,284,3,12,6,0,273,284,3,14,7,0,274,284,3,20,
+        10,0,275,284,3,22,11,0,276,284,3,24,12,0,277,284,3,34,17,0,278,284,
+        3,26,13,0,279,284,3,28,14,0,280,284,3,30,15,0,281,284,3,54,27,0,
+        282,284,5,43,0,0,283,270,1,0,0,0,283,271,1,0,0,0,283,272,1,0,0,0,
+        283,273,1,0,0,0,283,274,1,0,0,0,283,275,1,0,0,0,283,276,1,0,0,0,
+        283,277,1,0,0,0,283,278,1,0,0,0,283,279,1,0,0,0,283,280,1,0,0,0,
+        283,281,1,0,0,0,283,282,1,0,0,0,284,41,1,0,0,0,285,288,3,40,20,0,
+        286,288,3,30,15,0,287,285,1,0,0,0,287,286,1,0,0,0,288,290,1,0,0,
+        0,289,291,5,48,0,0,290,289,1,0,0,0,291,292,1,0,0,0,292,290,1,0,0,
+        0,292,293,1,0,0,0,293,295,1,0,0,0,294,287,1,0,0,0,295,298,1,0,0,
+        0,296,294,1,0,0,0,296,297,1,0,0,0,297,43,1,0,0,0,298,296,1,0,0,0,
+        299,300,6,22,-1,0,300,315,3,50,25,0,301,315,3,52,26,0,302,315,3,
+        46,23,0,303,315,3,54,27,0,304,315,5,44,0,0,305,306,5,17,0,0,306,
+        307,3,44,22,0,307,308,5,18,0,0,308,315,1,0,0,0,309,310,5,4,0,0,310,
+        315,3,44,22,10,311,312,5,15,0,0,312,315,3,44,22,6,313,315,3,48,24,
+        0,314,299,1,0,0,0,314,301,1,0,0,0,314,302,1,0,0,0,314,303,1,0,0,
+        0,314,304,1,0,0,0,314,305,1,0,0,0,314,309,1,0,0,0,314,311,1,0,0,
+        0,314,313,1,0,0,0,315,341,1,0,0,0,316,317,10,9,0,0,317,318,7,0,0,
+        0,318,340,3,44,22,10,319,320,10,8,0,0,320,321,7,1,0,0,321,340,3,
+        44,22,9,322,323,10,7,0,0,323,324,7,2,0,0,324,340,3,44,22,8,325,326,
+        10,5,0,0,326,327,5,13,0,0,327,340,3,44,22,6,328,329,10,4,0,0,329,
+        330,5,14,0,0,330,340,3,44,22,5,331,332,10,3,0,0,332,333,5,5,0,0,
+        333,340,3,44,22,3,334,335,10,1,0,0,335,336,5,19,0,0,336,337,3,44,
+        22,0,337,338,5,20,0,0,338,340,1,0,0,0,339,316,1,0,0,0,339,319,1,
+        0,0,0,339,322,1,0,0,0,339,325,1,0,0,0,339,328,1,0,0,0,339,331,1,
+        0,0,0,339,334,1,0,0,0,340,343,1,0,0,0,341,339,1,0,0,0,341,342,1,
+        0,0,0,342,45,1,0,0,0,343,341,1,0,0,0,344,348,3,58,29,0,345,348,3,
+        60,30,0,346,348,3,62,31,0,347,344,1,0,0,0,347,345,1,0,0,0,347,346,
+        1,0,0,0,348,47,1,0,0,0,349,358,5,19,0,0,350,355,3,44,22,0,351,352,
+        5,16,0,0,352,354,3,44,22,0,353,351,1,0,0,0,354,357,1,0,0,0,355,353,
+        1,0,0,0,355,356,1,0,0,0,356,359,1,0,0,0,357,355,1,0,0,0,358,350,
+        1,0,0,0,358,359,1,0,0,0,359,360,1,0,0,0,360,361,5,20,0,0,361,49,
+        1,0,0,0,362,363,5,46,0,0,363,51,1,0,0,0,364,365,5,45,0,0,365,53,
+        1,0,0,0,366,367,5,44,0,0,367,369,5,17,0,0,368,370,3,56,28,0,369,
+        368,1,0,0,0,369,370,1,0,0,0,370,371,1,0,0,0,371,372,5,18,0,0,372,
+        55,1,0,0,0,373,378,3,44,22,0,374,375,5,16,0,0,375,377,3,44,22,0,
+        376,374,1,0,0,0,377,380,1,0,0,0,378,376,1,0,0,0,378,379,1,0,0,0,
+        379,57,1,0,0,0,380,378,1,0,0,0,381,382,5,21,0,0,382,383,5,17,0,0,
+        383,384,3,44,22,0,384,385,5,18,0,0,385,59,1,0,0,0,386,387,5,22,0,
+        0,387,388,5,17,0,0,388,389,3,44,22,0,389,390,5,18,0,0,390,61,1,0,
+        0,0,391,392,5,23,0,0,392,393,5,17,0,0,393,394,3,44,22,0,394,395,
+        5,18,0,0,395,63,1,0,0,0,36,80,86,91,93,97,110,126,133,139,143,153,
+        160,168,180,185,195,204,210,224,230,240,257,263,267,283,287,292,
+        296,314,339,341,347,355,358,369,378
     ]
 
 class SzprajchParser ( Parser ):
@@ -2117,6 +2118,10 @@ class SzprajchParser ( Parser ):
             return self.getTypedRuleContext(SzprajchParser.BreakstmtContext,0)
 
 
+        def functiondef(self):
+            return self.getTypedRuleContext(SzprajchParser.FunctiondefContext,0)
+
+
         def functioncall(self):
             return self.getTypedRuleContext(SzprajchParser.FunctioncallContext,0)
 
@@ -2149,7 +2154,7 @@ class SzprajchParser ( Parser ):
         localctx = SzprajchParser.Function_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_function_statement)
         try:
-            self.state = 282
+            self.state = 283
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,24,self._ctx)
             if la_ == 1:
@@ -2215,12 +2220,18 @@ class SzprajchParser ( Parser ):
             elif la_ == 11:
                 self.enterOuterAlt(localctx, 11)
                 self.state = 280
-                self.functioncall()
+                self.functiondef()
                 pass
 
             elif la_ == 12:
                 self.enterOuterAlt(localctx, 12)
                 self.state = 281
+                self.functioncall()
+                pass
+
+            elif la_ == 13:
+                self.enterOuterAlt(localctx, 13)
+                self.state = 282
                 self.match(SzprajchParser.COMMENT)
                 pass
 
@@ -2288,37 +2299,37 @@ class SzprajchParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 295
+            self.state = 296
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & 33118878695424) != 0):
-                self.state = 286
+                self.state = 287
                 self._errHandler.sync(self)
-                token = self._input.LA(1)
-                if token in [24, 25, 26, 28, 33, 34, 35, 36, 41, 42, 43, 44]:
-                    self.state = 284
+                la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
+                if la_ == 1:
+                    self.state = 285
                     self.function_statement()
                     pass
-                elif token in [32]:
-                    self.state = 285
+
+                elif la_ == 2:
+                    self.state = 286
                     self.functiondef()
                     pass
-                else:
-                    raise NoViableAltException(self)
 
-                self.state = 289 
+
+                self.state = 290 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
-                    self.state = 288
+                    self.state = 289
                     self.match(SzprajchParser.NEWLINE)
-                    self.state = 291 
+                    self.state = 292 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==48):
                         break
 
-                self.state = 297
+                self.state = 298
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -2821,7 +2832,7 @@ class SzprajchParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 313
+            self.state = 314
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
             if la_ == 1:
@@ -2829,7 +2840,7 @@ class SzprajchParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 299
+                self.state = 300
                 self.string()
                 pass
 
@@ -2837,7 +2848,7 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.NumberExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 300
+                self.state = 301
                 self.number()
                 pass
 
@@ -2845,7 +2856,7 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.FuncExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 301
+                self.state = 302
                 self.func()
                 pass
 
@@ -2853,7 +2864,7 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.FuncCallExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 302
+                self.state = 303
                 self.functioncall()
                 pass
 
@@ -2861,7 +2872,7 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.IdExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 303
+                self.state = 304
                 self.match(SzprajchParser.ID)
                 pass
 
@@ -2870,11 +2881,11 @@ class SzprajchParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 304
-                self.match(SzprajchParser.LPAREN)
                 self.state = 305
-                self.expression(0)
+                self.match(SzprajchParser.LPAREN)
                 self.state = 306
+                self.expression(0)
+                self.state = 307
                 self.match(SzprajchParser.RPAREN)
                 pass
 
@@ -2882,9 +2893,9 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.NegateExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 308
-                self.match(SzprajchParser.SUB)
                 self.state = 309
+                self.match(SzprajchParser.SUB)
+                self.state = 310
                 self.expression(10)
                 pass
 
@@ -2892,9 +2903,9 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.NotExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 310
-                self.match(SzprajchParser.NOT)
                 self.state = 311
+                self.match(SzprajchParser.NOT)
+                self.state = 312
                 self.expression(6)
                 pass
 
@@ -2902,13 +2913,13 @@ class SzprajchParser ( Parser ):
                 localctx = SzprajchParser.ListExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 312
+                self.state = 313
                 self.list_()
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 340
+            self.state = 341
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2916,17 +2927,17 @@ class SzprajchParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 338
+                    self.state = 339
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,29,self._ctx)
                     if la_ == 1:
                         localctx = SzprajchParser.MulDivExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 315
+                        self.state = 316
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 316
+                        self.state = 317
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 70) != 0)):
@@ -2934,18 +2945,18 @@ class SzprajchParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 317
+                        self.state = 318
                         self.expression(10)
                         pass
 
                     elif la_ == 2:
                         localctx = SzprajchParser.AddSubExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 318
+                        self.state = 319
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
-                        self.state = 319
+                        self.state = 320
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==3 or _la==4):
@@ -2953,18 +2964,18 @@ class SzprajchParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 320
+                        self.state = 321
                         self.expression(9)
                         pass
 
                     elif la_ == 3:
                         localctx = SzprajchParser.RelExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 321
+                        self.state = 322
                         if not self.precpred(self._ctx, 7):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
-                        self.state = 322
+                        self.state = 323
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 8064) != 0)):
@@ -2972,66 +2983,66 @@ class SzprajchParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 323
+                        self.state = 324
                         self.expression(8)
                         pass
 
                     elif la_ == 4:
                         localctx = SzprajchParser.AndExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 324
+                        self.state = 325
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 325
-                        self.match(SzprajchParser.AND)
                         self.state = 326
+                        self.match(SzprajchParser.AND)
+                        self.state = 327
                         self.expression(6)
                         pass
 
                     elif la_ == 5:
                         localctx = SzprajchParser.OrExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 327
+                        self.state = 328
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 328
-                        self.match(SzprajchParser.OR)
                         self.state = 329
+                        self.match(SzprajchParser.OR)
+                        self.state = 330
                         self.expression(5)
                         pass
 
                     elif la_ == 6:
                         localctx = SzprajchParser.ExpExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 330
+                        self.state = 331
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 331
-                        self.match(SzprajchParser.EXP)
                         self.state = 332
+                        self.match(SzprajchParser.EXP)
+                        self.state = 333
                         self.expression(3)
                         pass
 
                     elif la_ == 7:
                         localctx = SzprajchParser.IndexExprContext(self, SzprajchParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 333
+                        self.state = 334
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 334
-                        self.match(SzprajchParser.LBRACKET)
                         self.state = 335
-                        self.expression(0)
+                        self.match(SzprajchParser.LBRACKET)
                         self.state = 336
+                        self.expression(0)
+                        self.state = 337
                         self.match(SzprajchParser.RBRACKET)
                         pass
 
              
-                self.state = 342
+                self.state = 343
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
 
@@ -3088,22 +3099,22 @@ class SzprajchParser ( Parser ):
         localctx = SzprajchParser.FuncContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_func)
         try:
-            self.state = 346
+            self.state = 347
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [21]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 343
+                self.state = 344
                 self.lenfunc()
                 pass
             elif token in [22]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 344
+                self.state = 345
                 self.valfunc()
                 pass
             elif token in [23]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 345
+                self.state = 346
                 self.isnanfunc()
                 pass
             else:
@@ -3171,29 +3182,29 @@ class SzprajchParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 348
+            self.state = 349
             self.match(SzprajchParser.LBRACKET)
-            self.state = 357
+            self.state = 358
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 123145317679120) != 0):
-                self.state = 349
+                self.state = 350
                 self.expression(0)
-                self.state = 354
+                self.state = 355
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==16:
-                    self.state = 350
-                    self.match(SzprajchParser.COMMA)
                     self.state = 351
+                    self.match(SzprajchParser.COMMA)
+                    self.state = 352
                     self.expression(0)
-                    self.state = 356
+                    self.state = 357
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
 
 
-            self.state = 359
+            self.state = 360
             self.match(SzprajchParser.RBRACKET)
         except RecognitionException as re:
             localctx.exception = re
@@ -3240,7 +3251,7 @@ class SzprajchParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_string)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 361
+            self.state = 362
             self.match(SzprajchParser.STRINGLITERAL)
         except RecognitionException as re:
             localctx.exception = re
@@ -3287,7 +3298,7 @@ class SzprajchParser ( Parser ):
         self.enterRule(localctx, 52, self.RULE_number)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 363
+            self.state = 364
             self.match(SzprajchParser.NUMBER)
         except RecognitionException as re:
             localctx.exception = re
@@ -3345,19 +3356,19 @@ class SzprajchParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 365
-            self.match(SzprajchParser.ID)
             self.state = 366
+            self.match(SzprajchParser.ID)
+            self.state = 367
             self.match(SzprajchParser.LPAREN)
-            self.state = 368
+            self.state = 369
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 123145317679120) != 0):
-                self.state = 367
+                self.state = 368
                 self.arglist()
 
 
-            self.state = 370
+            self.state = 371
             self.match(SzprajchParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -3415,17 +3426,17 @@ class SzprajchParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 372
+            self.state = 373
             self.expression(0)
-            self.state = 377
+            self.state = 378
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==16:
-                self.state = 373
-                self.match(SzprajchParser.COMMA)
                 self.state = 374
+                self.match(SzprajchParser.COMMA)
+                self.state = 375
                 self.expression(0)
-                self.state = 379
+                self.state = 380
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -3484,13 +3495,13 @@ class SzprajchParser ( Parser ):
         self.enterRule(localctx, 58, self.RULE_lenfunc)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 380
-            self.match(SzprajchParser.LEN)
             self.state = 381
-            self.match(SzprajchParser.LPAREN)
+            self.match(SzprajchParser.LEN)
             self.state = 382
-            self.expression(0)
+            self.match(SzprajchParser.LPAREN)
             self.state = 383
+            self.expression(0)
+            self.state = 384
             self.match(SzprajchParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -3547,13 +3558,13 @@ class SzprajchParser ( Parser ):
         self.enterRule(localctx, 60, self.RULE_valfunc)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 385
-            self.match(SzprajchParser.VAL)
             self.state = 386
-            self.match(SzprajchParser.LPAREN)
+            self.match(SzprajchParser.VAL)
             self.state = 387
-            self.expression(0)
+            self.match(SzprajchParser.LPAREN)
             self.state = 388
+            self.expression(0)
+            self.state = 389
             self.match(SzprajchParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -3610,13 +3621,13 @@ class SzprajchParser ( Parser ):
         self.enterRule(localctx, 62, self.RULE_isnanfunc)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 390
-            self.match(SzprajchParser.ISNAN)
             self.state = 391
-            self.match(SzprajchParser.LPAREN)
+            self.match(SzprajchParser.ISNAN)
             self.state = 392
-            self.expression(0)
+            self.match(SzprajchParser.LPAREN)
             self.state = 393
+            self.expression(0)
+            self.state = 394
             self.match(SzprajchParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re

@@ -1,0 +1,24 @@
+FUNKCYJO przetworz_uzytkownika(imie, wiek)
+    FUNKCYJO sprawdz_imie()
+        JAK LEN(imie) < 2 POTYM
+            GODEJ "Imię za krótkie"
+            NAZOT 0
+        KONIEC
+        NAZOT 1
+    KONIEC
+
+    FUNKCYJO sprawdz_wiek()
+        JAK wiek < 18 POTYM
+            GODEJ "Musisz mieć co najmniej 18 lat"
+            NAZOT 0
+        KONIEC
+        NAZOT 1
+    KONIEC
+    
+    JAK sprawdz_wiek() I sprawdz_imie() POTYM
+        GODEJ "Dane OK"
+    KONIEC
+
+KONIEC
+
+przetworz_uzytkownika("A", 18)
