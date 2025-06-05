@@ -1,0 +1,22 @@
+GODKA Sortowanie bąbelkowe (bubble sort)
+
+ZMIYNNO liczby = [5, 2, 9, 1, 7, 3]
+ZMIYNNO n = LEN(liczby)
+ZMIYNNO i = 0
+
+POKI i < n - 1
+    ZMIYNNO j = 0
+    POKI j < n - i - 1
+    ZMIYNNO a = liczby[j]
+    ZMIYNNO b = liczby[j + 1]
+        JAK a > b POTYM
+            ZMIYNNO temp = liczby[j]           GODKA przepisanie do zmiennej tymczasowej
+            liczby[j] = liczby[j + 1]
+            liczby[j + 1] = temp
+        KONIEC
+        j = j + 1
+    KONIEC
+    i = i + 1
+KONIEC
+
+GODEJ "Posortowana lista: " + liczby
