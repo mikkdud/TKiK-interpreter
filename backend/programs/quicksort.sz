@@ -1,0 +1,36 @@
+GODKA funkcyjo, kero sortuje lista ôd najsrońszej do nojwiynkszyj
+FUNKCYJO quicksort(lista)
+    JAK LEN(lista) <= 1 POTYM
+        NAZOT lista
+    KONIEC
+    
+    ZMIYNNO i = 0
+    ZMIYNNO pivot = lista[0]
+    
+    ZMIYNNO mniyjsze = []
+    ZMIYNNO rowne = []
+    ZMIYNNO wiynksze = []
+    
+    POKI i < LEN(lista)
+        ZMIYNNO element = lista[i]
+        
+        JAK element < pivot POTYM
+            mniyjsze = mniyjsze + [element]
+        INKSZY JAK element > pivot POTYM
+            wiynksze = wiynksze + [element]
+        INKSZY
+            rowne = rowne + [element]
+        KONIEC
+    
+        i = i + 1
+    KONIEC
+    
+    NAZOT quicksort(mniyjsze) + rowne + quicksort(wiynksze)
+KONIEC
+
+
+
+ZMIYNNO do_posortowania = [7, 3, 9, 1, 5, 2, 8]
+ZMIYNNO posortowane = quicksort(do_posortowania)
+GODEJ "Przed sortowaniem: " + do_posortowania
+GODEJ "Posortowano: " + posortowane

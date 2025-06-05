@@ -1,0 +1,80 @@
+
+GODKA funkcyjo, kero liczbyje silnia z podanyj liczby
+FUNKCYJO silnia(n)
+    JAK n = 0 POTYM
+        NAZOT 1
+    INKSZY
+        NAZOT n * silnia(n - 1)
+    KONIEC
+KONIEC
+
+GODKA funkcyjo, kero sprawdzo, czy dana lista ôstô palindromym
+FUNKCYJO czy_palindrom(lista)
+    ZMIYNNO i = 0
+    ZMIYNNO j = LEN(lista) - 1
+    POKI i < j
+        ZMIYNNO l = lista[i]
+        ZMIYNNO r = lista[j]
+        JAK l <> r POTYM
+            NAZOT 0
+        KONIEC
+        i = i + 1
+        j = j - 1
+    KONIEC
+    NAZOT 1
+KONIEC
+
+GODKA funkcyjo, kero zwraco piyrszom parzystom liczba z podanyj listy
+FUNKCYJO szukaj_pierwszej_parzystej(lista)
+    ZMIYNNO i = 0
+    POKI 1
+        JAK i >= LEN(lista) POTYM
+            NAZOT -1
+        KONIEC
+        JAK lista[i] MOD 2 = 0 POTYM
+            NAZOT lista[i]
+        KONIEC
+        i = i + 1
+    KONIEC
+KONIEC
+
+
+ZMIYNNO wynik = silnia(6)
+GODEJ "6! = " + wynik
+
+ZMIYNNO lista_test = ["k", "a", "j", "a", "k"]
+ZMIYNNO wynik_palindrom = czy_palindrom(lista_test)
+JAK wynik_palindrom POTYM
+    GODEJ "Lista " + lista_test + " jest palindromem."
+INKSZY
+    GODEJ "Lista " + lista_test + " nie jest palindromem."
+KONIEC
+
+ZMIYNNO lista_liczb = [1, 3, 5, 20, 7]
+ZMIYNNO wynik_parzysta = szukaj_pierwszej_parzystej(lista_liczb)
+JAK wynik_parzysta <> -1 POTYM
+    GODEJ "Pierwsza parzysta liczba w liście "+ lista_liczb + " to: " + wynik_parzysta
+INKSZY
+    GODEJ "Brak liczb parzystych w liście "+ lista_liczb
+KONIEC
+
+ZMIYNNO litery = ["K", "a", "j", "ś"]
+ZMIYNNO dlugosc = LEN(litery)
+GODEJ dlugosc  
+
+ZMIYNNO a = VAL("42")
+ZMIYNNO b = VAL("3.14")
+ZMIYNNO c = VAL("abc")  GODKA tego nie da się sparsować – powinno dać NaN
+
+GODEJ a  GODKA powinno wypisać: 42
+GODEJ b  GODKA powinno wypisać: 3.14
+GODEJ c  GODKA powinno wypisać: NaN albo coś podobnego
+
+ZMIYNNO x = VAL("abc")  GODKA zwróci NaN
+ZMIYNNO y = VAL("123")  GODKA zwróci 123
+
+ZMIYNNO test1 = ISNAN(x)
+ZMIYNNO test2 = ISNAN(y)
+
+GODEJ test1  GODKA powinno wypisać: TRUE (albo 1)
+GODEJ test2  GODKA powinno wypisać: FALSE (albo 0)
